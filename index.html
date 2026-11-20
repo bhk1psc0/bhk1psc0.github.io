@@ -1,0 +1,1475 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>就要草 - 品牌官网 | 自然生活影像社区</title>
+<meta name="description" content="就要草官方网站，专注自然生活方式影像的原创视频品牌，汇聚创作者与企业内容生态，呈现真实温暖的品质内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f6b4f'/%3E%3Cpath d='M32 12c7 9 14 12 14 22a14 14 0 0 1-28 0c0-10 7-13 14-22z' fill='%23d9edc8'/%3E%3Cpath d='M32 26v22' stroke='%232f6b4f' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --jyc-green:#2f6b4f;
+  --jyc-green-deep:#1d4632;
+  --jyc-leaf:#8fbc6d;
+  --jyc-earth:#b98c5e;
+  --jyc-cream:#f6f7f0;
+  --jyc-ink:#1b2620;
+  --jyc-muted:#5b6b60;
+  --jyc-line:#dfe6d8;
+  --jyc-amber:#e0a43c;
+  --jyc-radius:16px;
+  --jyc-shadow:0 10px 28px rgba(29,70,50,.10);
+  --jyc-sticky:104px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:var(--jyc-sticky);}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,-apple-system,sans-serif;
+  background:var(--jyc-cream);
+  color:var(--jyc-ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+h1,h2,h3,h4{margin:0;line-height:1.35;letter-spacing:.01em;}
+p{margin:0 0 14px;}
+ul{margin:0;padding:0;list-style:none;}
+
+.jyc-wrap{width:min(1180px,92vw);margin:0 auto;}
+
+/* ============ 公告条 + 页头（吸顶） ============ */
+.jyc-stick{position:sticky;top:0;z-index:90;}
+.jyc-notice{
+  background:var(--jyc-green-deep);
+  color:#e9f3e2;
+  font-size:13.5px;
+}
+.jyc-notice .jyc-wrap{
+  display:flex;align-items:center;gap:12px;
+  min-height:38px;padding:6px 0;flex-wrap:wrap;
+}
+.jyc-notice-tag{
+  flex:0 0 auto;
+  background:var(--jyc-amber);color:#26301f;
+  font-weight:700;font-size:12px;
+  padding:2px 9px;border-radius:999px;letter-spacing:.06em;
+}
+.jyc-notice-text{flex:1 1 auto;min-width:200px;}
+.jyc-notice-text strong{color:#fff;}
+.jyc-notice-link{
+  flex:0 0 auto;font-size:13px;border-bottom:1px dashed rgba(233,243,226,.6);
+  padding-bottom:1px;transition:color .2s;
+}
+.jyc-notice-link:hover{color:var(--jyc-amber);}
+
+.jyc-header{
+  background:rgba(246,247,240,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--jyc-line);
+}
+.jyc-header-inner{
+  display:flex;align-items:center;gap:22px;
+  min-height:64px;
+}
+.jyc-brand{display:flex;align-items:center;gap:10px;flex:0 0 auto;}
+.jyc-brand-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(140deg,var(--jyc-green) 0%,var(--jyc-leaf) 100%);
+  display:grid;place-items:center;color:#eaf5df;font-weight:800;font-size:19px;
+  box-shadow:0 4px 12px rgba(47,107,79,.28);
+}
+.jyc-brand-name{font-size:19px;font-weight:800;letter-spacing:.04em;color:var(--jyc-green-deep);}
+.jyc-brand-sub{display:block;font-size:11px;font-weight:500;color:var(--jyc-muted);letter-spacing:.22em;}
+
+.jyc-nav{display:flex;gap:4px;flex:1 1 auto;flex-wrap:wrap;}
+.jyc-nav a{
+  font-size:14.5px;padding:8px 12px;border-radius:9px;color:#2c3a31;
+  transition:background .2s,color .2s;white-space:nowrap;
+}
+.jyc-nav a:hover{background:#e4edda;color:var(--jyc-green-deep);}
+
+.jyc-search{
+  display:flex;align-items:center;gap:6px;flex:0 0 auto;
+  background:#fff;border:1px solid var(--jyc-line);border-radius:999px;
+  padding:4px 4px 4px 14px;
+}
+.jyc-search input{
+  border:0;outline:0;background:transparent;font-size:13.5px;width:140px;color:var(--jyc-ink);
+}
+.jyc-search button{
+  border:0;border-radius:999px;background:var(--jyc-green);color:#fff;
+  font-size:13px;padding:6px 14px;transition:background .2s;
+}
+.jyc-search button:hover{background:var(--jyc-green-deep);}
+
+.jyc-burger{
+  display:none;border:1px solid var(--jyc-line);background:#fff;border-radius:10px;
+  width:42px;height:42px;padding:0;flex-direction:column;justify-content:center;
+  align-items:center;gap:5px;
+}
+.jyc-burger span{display:block;width:19px;height:2px;background:var(--jyc-green-deep);border-radius:2px;transition:.2s;}
+
+.jyc-search-hint{
+  font-size:12.5px;color:var(--jyc-green-deep);
+  background:#e8f2df;border-radius:0 0 10px 10px;
+  max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;
+}
+.jyc-search-hint.jyc-on{max-height:60px;padding:7px 16px;}
+
+/* ============ 通用区块框架 ============ */
+.jyc-section{padding:64px 0;}
+.jyc-section--tint{background:#eef3e7;}
+.jyc-section--deep{background:var(--jyc-green-deep);color:#e9f3e2;}
+.jyc-section--deep h2,.jyc-section--deep h3{color:#fff;}
+
+.jyc-eyebrow{
+  display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.22em;
+  color:var(--jyc-green);background:#e2eed7;border-radius:999px;
+  padding:4px 13px;margin-bottom:14px;
+}
+.jyc-section--deep .jyc-eyebrow{background:rgba(143,188,109,.2);color:#c8e3ac;}
+
+.jyc-h2{font-size:clamp(23px,3vw,31px);color:var(--jyc-green-deep);margin-bottom:10px;}
+.jyc-sub{font-size:15px;color:var(--jyc-muted);max-width:760px;margin-bottom:30px;}
+.jyc-section--deep .jyc-sub{color:#b9cbb2;}
+
+/* ============ 首屏 ============ */
+.jyc-hero{padding:60px 0 54px;position:relative;overflow:hidden;}
+.jyc-hero::before{
+  content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;
+  border-radius:50%;background:radial-gradient(circle,#dceccb,transparent 68%);z-index:0;
+}
+.jyc-hero-grid{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:6fr 4fr;gap:48px;align-items:center;
+}
+.jyc-hero h1{
+  font-size:clamp(34px,5.2vw,54px);color:var(--jyc-green-deep);
+  letter-spacing:.03em;margin-bottom:6px;
+}
+.jyc-hero-tag{
+  font-size:15px;font-weight:700;color:var(--jyc-earth);letter-spacing:.14em;margin-bottom:16px;
+}
+.jyc-hero-lead{font-size:16px;color:#3a4a3f;max-width:560px;}
+.jyc-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
+.jyc-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  border-radius:999px;padding:11px 24px;font-size:14.5px;font-weight:600;
+  border:1px solid transparent;transition:transform .18s,box-shadow .18s,background .18s;
+}
+.jyc-btn:hover{transform:translateY(-2px);}
+.jyc-btn--primary{background:var(--jyc-green);color:#fff;box-shadow:0 8px 20px rgba(47,107,79,.28);}
+.jyc-btn--primary:hover{background:var(--jyc-green-deep);}
+.jyc-btn--ghost{background:#fff;color:var(--jyc-green-deep);border-color:var(--jyc-line);}
+.jyc-btn--ghost:hover{border-color:var(--jyc-green);}
+.jyc-btn--light{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.32);}
+
+.jyc-stats{
+  display:flex;gap:14px;flex-wrap:wrap;margin-top:30px;
+}
+.jyc-stat{
+  background:#fff;border:1px solid var(--jyc-line);border-radius:var(--jyc-radius);
+  padding:14px 20px;min-width:130px;box-shadow:var(--jyc-shadow);
+}
+.jyc-stat-num{font-size:24px;font-weight:800;color:var(--jyc-green);letter-spacing:.02em;}
+.jyc-stat-label{font-size:12.5px;color:var(--jyc-muted);}
+
+.jyc-hero-visual{position:relative;}
+.jyc-hero-cover{
+  border-radius:22px;overflow:hidden;box-shadow:0 22px 48px rgba(29,70,50,.22);
+  border:6px solid #fff;position:relative;
+}
+.jyc-hero-cover img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.jyc-hero-badge{
+  position:absolute;left:14px;bottom:14px;
+  background:rgba(23,44,34,.78);color:#e8f4dd;
+  font-size:12.5px;padding:5px 12px;border-radius:999px;backdrop-filter:blur(4px);
+}
+.jyc-hero-float{
+  position:absolute;top:-18px;right:-12px;
+  background:#fff;border-radius:14px;padding:10px 16px;
+  box-shadow:var(--jyc-shadow);font-size:13px;color:var(--jyc-green-deep);
+  font-weight:700;border:1px solid var(--jyc-line);
+}
+.jyc-hero-float small{display:block;font-weight:400;color:var(--jyc-muted);font-size:11.5px;}
+
+/* ============ 关键词深度解析 ============ */
+.jyc-about-grid{display:grid;grid-template-columns:1fr;gap:0;}
+.jyc-about-body{
+  background:#fff;border:1px solid var(--jyc-line);border-radius:20px;
+  padding:34px clamp(20px,4vw,44px);box-shadow:var(--jyc-shadow);
+}
+.jyc-about-body p{font-size:15px;color:#37463c;}
+.jyc-about-body h3{
+  font-size:18px;color:var(--jyc-green-deep);margin:24px 0 8px;
+  padding-left:12px;border-left:4px solid var(--jyc-leaf);
+}
+.jyc-about-body h3:first-child{margin-top:0;}
+
+/* ============ 焦点内容 ============ */
+.jyc-focus-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
+}
+.jyc-focus-card{
+  background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--jyc-line);
+  box-shadow:var(--jyc-shadow);transition:transform .22s,box-shadow .22s;
+  display:flex;flex-direction:column;
+}
+.jyc-focus-card:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(29,70,50,.16);}
+.jyc-cover{
+  position:relative;overflow:hidden;background:#dfe8d6;
+}
+.jyc-cover img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .4s;}
+.jyc-focus-card:hover .jyc-cover img{transform:scale(1.045);}
+.jyc-cover-tag{
+  position:absolute;left:12px;top:12px;background:rgba(29,70,50,.82);color:#eaf5df;
+  font-size:12px;padding:3px 10px;border-radius:999px;letter-spacing:.05em;
+}
+.jyc-cover-play{
+  position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;
+}
+.jyc-cover-play span{
+  width:54px;height:54px;border-radius:50%;
+  background:rgba(255,255,255,.86);display:grid;place-items:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.2);
+}
+.jyc-cover-play span::after{
+  content:"";width:0;height:0;border-style:solid;
+  border-width:10px 0 10px 17px;border-color:transparent transparent transparent var(--jyc-green-deep);
+  margin-left:4px;
+}
+.jyc-focus-body{padding:20px 22px 22px;}
+.jyc-focus-body h3{font-size:18.5px;color:var(--jyc-green-deep);margin-bottom:8px;}
+.jyc-focus-body p{font-size:14px;color:var(--jyc-muted);margin-bottom:14px;}
+.jyc-meta{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#7c8a80;}
+.jyc-meta b{color:var(--jyc-green);font-weight:700;}
+
+/* ============ 视频流卡片 ============ */
+.jyc-filterbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px;}
+.jyc-chip{
+  border:1px solid var(--jyc-line);background:#fff;border-radius:999px;
+  padding:6px 16px;font-size:13px;color:#415046;transition:.2s;
+}
+.jyc-chip:hover{border-color:var(--jyc-leaf);}
+.jyc-chip.jyc-on{background:var(--jyc-green);color:#fff;border-color:var(--jyc-green);}
+
+.jyc-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.jyc-video-card{
+  background:#fff;border:1px solid var(--jyc-line);border-radius:var(--jyc-radius);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .22s,box-shadow .22s;
+}
+.jyc-video-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(29,70,50,.14);}
+.jyc-video-card h3{font-size:16px;color:var(--jyc-green-deep);margin-bottom:6px;}
+.jyc-video-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1 1 auto;}
+.jyc-video-desc{font-size:13.5px;color:var(--jyc-muted);margin-bottom:12px;}
+.jyc-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.jyc-tag{font-size:11.5px;color:var(--jyc-green-deep);background:#e7f1dc;border-radius:6px;padding:2px 8px;}
+.jyc-author{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#63735f;margin-bottom:12px;}
+.jyc-avatar{
+  width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+  font-size:12px;font-weight:700;color:#fff;flex:0 0 auto;
+}
+.jyc-card-foot{
+  margin-top:auto;display:flex;align-items:center;justify-content:space-between;
+  gap:8px;border-top:1px dashed var(--jyc-line);padding-top:12px;
+}
+.jyc-actions{display:flex;gap:6px;}
+.jyc-icon-btn{
+  display:inline-flex;align-items:center;gap:4px;
+  border:1px solid var(--jyc-line);background:#fff;border-radius:999px;
+  padding:4px 11px;font-size:12px;color:#5d6c62;transition:.2s;
+}
+.jyc-icon-btn:hover{border-color:var(--jyc-leaf);color:var(--jyc-green);}
+.jyc-icon-btn.jyc-liked{background:#e7f1dc;border-color:var(--jyc-leaf);color:var(--jyc-green-deep);font-weight:700;}
+.jyc-icon-btn.jyc-saved{background:#fdf2dc;border-color:var(--jyc-amber);color:#8a6416;font-weight:700;}
+
+/* ============ 专题 ============ */
+.jyc-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.jyc-topic-card{
+  background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--jyc-line);
+  display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;
+}
+.jyc-topic-card:hover{transform:translateY(-3px);box-shadow:var(--jyc-shadow);}
+.jyc-topic-card img{aspect-ratio:16/9;object-fit:cover;width:100%;}
+.jyc-topic-body{padding:18px 20px 20px;flex:1 1 auto;display:flex;flex-direction:column;}
+.jyc-topic-body h3{font-size:16.5px;margin-bottom:6px;color:var(--jyc-green-deep);}
+.jyc-topic-body p{font-size:13.5px;color:var(--jyc-muted);}
+.jyc-status{
+  margin-top:auto;font-size:12px;display:inline-flex;align-items:center;gap:6px;
+  color:var(--jyc-green);font-weight:600;
+}
+.jyc-status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--jyc-leaf);}
+
+/* ============ 创作者矩阵 ============ */
+.jyc-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.jyc-creator-card{
+  background:#fff;border-radius:18px;border:1px solid var(--jyc-line);
+  padding:24px 20px;text-align:center;transition:transform .2s,box-shadow .2s;
+}
+.jyc-creator-card:hover{transform:translateY(-4px);box-shadow:var(--jyc-shadow);}
+.jyc-creator-av{
+  width:64px;height:64px;border-radius:50%;margin:0 auto 12px;
+  display:grid;place-items:center;font-size:23px;font-weight:800;color:#fff;
+  box-shadow:0 8px 18px rgba(29,70,50,.2);
+}
+.jyc-creator-card h3{font-size:16px;margin-bottom:4px;color:var(--jyc-green-deep);}
+.jyc-creator-field{font-size:12.5px;color:var(--jyc-earth);font-weight:600;margin-bottom:8px;}
+.jyc-creator-card p{font-size:13px;color:var(--jyc-muted);margin-bottom:12px;}
+.jyc-creator-num{display:flex;justify-content:center;gap:18px;font-size:12px;color:#6c7a70;margin-bottom:14px;}
+.jyc-creator-num b{display:block;font-size:15px;color:var(--jyc-green);}
+
+/* ============ 榜单 ============ */
+.jyc-rank-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.jyc-rank-panel{
+  background:#fff;border:1px solid var(--jyc-line);border-radius:18px;padding:24px 26px;
+  box-shadow:var(--jyc-shadow);
+}
+.jyc-rank-panel h3{font-size:16.5px;color:var(--jyc-green-deep);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.jyc-rank-panel h3::before{content:"";width:4px;height:16px;border-radius:2px;background:var(--jyc-amber);}
+.jyc-rank-item{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px dashed var(--jyc-line);font-size:14px;}
+.jyc-rank-item:last-child{border-bottom:0;}
+.jyc-rank-no{
+  width:24px;height:24px;border-radius:7px;flex:0 0 auto;display:grid;place-items:center;
+  font-size:12px;font-weight:800;background:#e7f1dc;color:var(--jyc-green-deep);
+}
+.jyc-rank-item:nth-child(2) .jyc-rank-no{background:var(--jyc-green);color:#fff;}
+.jyc-rank-name{flex:1 1 auto;color:#37463c;}
+.jyc-rank-val{font-size:12.5px;color:var(--jyc-muted);}
+
+/* ============ 随笔 ============ */
+.jyc-essay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.jyc-essay{
+  background:#fff;border:1px solid var(--jyc-line);border-radius:18px;padding:26px 24px;
+  position:relative;transition:transform .2s;
+}
+.jyc-essay:hover{transform:translateY(-3px);}
+.jyc-essay::before{content:"“";position:absolute;right:20px;top:10px;font-size:52px;color:#dbe8cf;line-height:1;font-family:Georgia,serif;}
+.jyc-essay h3{font-size:15.5px;color:var(--jyc-green-deep);margin-bottom:10px;}
+.jyc-essay p{font-size:13.5px;color:#4c5b51;margin-bottom:12px;}
+.jyc-essay-by{font-size:12.5px;color:var(--jyc-earth);font-weight:600;}
+
+/* ============ 用户评价 ============ */
+.jyc-review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.jyc-review{
+  background:rgba(255,255,255,.06);border:1px solid rgba(200,227,172,.24);
+  border-radius:16px;padding:20px 22px;transition:background .2s;
+}
+.jyc-review:hover{background:rgba(255,255,255,.1);}
+.jyc-review-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.jyc-review-head .jyc-avatar{width:32px;height:32px;font-size:13px;}
+.jyc-review-name{font-size:14px;color:#eaf5df;font-weight:600;}
+.jyc-review-date{font-size:11.5px;color:#9db595;}
+.jyc-review p{font-size:13.5px;color:#c9dcc0;margin:0;}
+
+/* ============ 合作品牌 ============ */
+.jyc-partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.jyc-partner{
+  background:#fff;border:1px solid var(--jyc-line);border-radius:14px;
+  padding:22px 18px;text-align:center;font-size:14px;font-weight:700;color:#4a5a4e;
+  transition:.2s;
+}
+.jyc-partner:hover{border-color:var(--jyc-leaf);color:var(--jyc-green-deep);transform:translateY(-2px);}
+.jyc-partner small{display:block;font-size:11.5px;font-weight:400;color:#8a978c;margin-top:4px;}
+
+/* ============ FAQ ============ */
+.jyc-faq{max-width:860px;margin:0 auto;}
+.jyc-faq details{
+  background:#fff;border:1px solid var(--jyc-line);border-radius:14px;
+  padding:0 20px;margin-bottom:12px;overflow:hidden;transition:border-color .2s;
+}
+.jyc-faq details[open]{border-color:var(--jyc-leaf);}
+.jyc-faq summary{
+  cursor:pointer;padding:16px 0;font-size:15px;font-weight:600;color:var(--jyc-green-deep);
+  list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.jyc-faq summary::-webkit-details-marker{display:none;}
+.jyc-faq summary::after{content:"+";font-size:20px;color:var(--jyc-leaf);font-weight:400;transition:transform .2s;}
+.jyc-faq details[open] summary::after{content:"−";}
+.jyc-faq details p{font-size:14px;color:#4c5b51;padding:0 0 16px;margin:0;}
+
+/* ============ 动态/更新日志 ============ */
+.jyc-log-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.jyc-log{
+  background:#fff;border:1px solid var(--jyc-line);border-radius:14px;
+  padding:18px 20px;display:flex;gap:14px;align-items:flex-start;
+}
+.jyc-log-date{
+  flex:0 0 auto;font-size:12px;font-weight:700;color:var(--jyc-green-deep);
+  background:#e7f1dc;border-radius:8px;padding:4px 9px;white-space:nowrap;
+}
+.jyc-log p{font-size:13.5px;color:#45544a;margin:0;}
+
+/* ============ 联系/投稿 ============ */
+.jyc-contact-panel{
+  background:linear-gradient(140deg,var(--jyc-green-deep),var(--jyc-green));
+  border-radius:24px;padding:clamp(28px,5vw,54px);color:#eaf5df;
+  display:grid;grid-template-columns:1.4fr 1fr;gap:34px;align-items:center;
+}
+.jyc-contact-panel h2{color:#fff;font-size:clamp(22px,3vw,29px);margin-bottom:10px;}
+.jyc-contact-panel p{color:#c3d7ba;font-size:14.5px;max-width:520px;}
+.jyc-contact-list{font-size:14px;display:grid;gap:10px;}
+.jyc-contact-list div{display:flex;gap:10px;align-items:center;}
+.jyc-contact-list b{color:#e0ebd6;font-weight:600;min-width:64px;}
+.jyc-contact-list span{color:#c3d7ba;}
+
+/* ============ 页脚 ============ */
+.jyc-footer{background:#173325;color:#a9bfa0;padding:52px 0 26px;font-size:13.5px;}
+.jyc-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:30px;margin-bottom:34px;}
+.jyc-footer h4{color:#e4efdc;font-size:14.5px;margin-bottom:12px;letter-spacing:.06em;}
+.jyc-footer ul li{margin-bottom:8px;}
+.jyc-footer a:hover{color:#d9edc8;}
+.jyc-footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.jyc-footer-brand .jyc-brand-mark{width:34px;height:34px;font-size:17px;}
+.jyc-footer-brand strong{color:#eaf5df;font-size:17px;letter-spacing:.05em;}
+.jyc-footer-desc{max-width:330px;color:#8fa78a;line-height:1.8;margin-bottom:14px;}
+.jyc-footer-bottom{
+  border-top:1px solid rgba(169,191,160,.2);padding-top:18px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#7d957a;
+}
+
+/* ============ 弹层 / Toast / 回到顶部 ============ */
+.jyc-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:rgba(23,51,37,.95);color:#e9f3e2;font-size:13.5px;
+  padding:10px 22px;border-radius:999px;opacity:0;pointer-events:none;
+  transition:opacity .25s,transform .25s;z-index:200;box-shadow:0 10px 26px rgba(0,0,0,.28);
+}
+.jyc-toast.jyc-on{opacity:1;transform:translate(-50%,0);}
+
+.jyc-backtop{
+  position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:50%;
+  border:0;background:var(--jyc-green);color:#fff;font-size:18px;
+  box-shadow:0 10px 22px rgba(29,70,50,.34);
+  opacity:0;pointer-events:none;transition:.25s;z-index:150;
+}
+.jyc-backtop.jyc-on{opacity:1;pointer-events:auto;}
+.jyc-backtop:hover{background:var(--jyc-green-deep);}
+
+.jyc-modal{
+  position:fixed;inset:0;background:rgba(16,32,24,.55);z-index:180;
+  display:none;place-items:center;padding:20px;
+}
+.jyc-modal.jyc-on{display:grid;}
+.jyc-modal-box{
+  background:#fff;border-radius:20px;max-width:460px;width:100%;
+  padding:28px 28px 24px;box-shadow:0 24px 60px rgba(0,0,0,.3);
+  max-height:86vh;overflow:auto;
+}
+.jyc-modal-box h3{font-size:18px;color:var(--jyc-green-deep);margin-bottom:10px;}
+.jyc-modal-box p{font-size:14px;color:#4c5b51;}
+.jyc-modal-close{
+  float:right;border:0;background:#eef3e7;color:var(--jyc-green-deep);
+  width:30px;height:30px;border-radius:50%;font-size:16px;line-height:1;
+}
+.jyc-modal-field{
+  display:block;width:100%;border:1px solid var(--jyc-line);border-radius:10px;
+  padding:10px 12px;font-size:14px;margin-bottom:12px;font-family:inherit;
+  background:#fbfcf8;color:var(--jyc-ink);outline:0;
+}
+.jyc-modal-field:focus{border-color:var(--jyc-leaf);}
+.jyc-modal textarea.jyc-modal-field{min-height:90px;resize:vertical;}
+.jyc-share-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;}
+.jyc-share-list button{
+  border:1px solid var(--jyc-line);background:#fbfcf8;border-radius:10px;
+  padding:10px;font-size:13.5px;color:#3c4b41;transition:.2s;
+}
+.jyc-share-list button:hover{border-color:var(--jyc-leaf);color:var(--jyc-green-deep);}
+
+/* ============ 响应式 ============ */
+@media (max-width:1024px){
+  .jyc-hero-grid{grid-template-columns:1fr;gap:34px;}
+  .jyc-video-grid{grid-template-columns:repeat(2,1fr);}
+  .jyc-creator-grid{grid-template-columns:repeat(2,1fr);}
+  .jyc-topic-grid,.jyc-essay-grid,.jyc-review-grid{grid-template-columns:repeat(2,1fr);}
+  .jyc-contact-panel{grid-template-columns:1fr;}
+  .jyc-footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:860px){
+  .jyc-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:#f6f7f0;border-bottom:1px solid var(--jyc-line);
+    padding:8px 4vw 14px;flex-direction:column;gap:2px;
+    box-shadow:0 16px 30px rgba(29,70,50,.12);
+  }
+  .jyc-nav.jyc-open{display:flex;}
+  .jyc-nav a{padding:11px 12px;}
+  .jyc-header-inner{position:relative;flex-wrap:wrap;}
+  .jyc-burger{display:flex;margin-left:auto;order:3;}
+  .jyc-search{order:4;width:100%;margin-bottom:10px;}
+  .jyc-search input{width:100%;}
+  .jyc-focus-grid,.jyc-rank-grid,.jyc-log-grid{grid-template-columns:1fr;}
+  .jyc-video-grid{grid-template-columns:1fr;}
+  .jyc-creator-grid{grid-template-columns:1fr 1fr;}
+  .jyc-topic-grid,.jyc-essay-grid,.jyc-review-grid,.jyc-partner-grid{grid-template-columns:1fr;}
+  .jyc-section{padding:46px 0;}
+}
+@media (max-width:520px){
+  .jyc-creator-grid{grid-template-columns:1fr;}
+  .jyc-footer-grid{grid-template-columns:1fr;}
+  .jyc-hero-float{display:none;}
+  .jyc-share-list{grid-template-columns:1fr;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="jyc-stick">
+  <!-- 公告条 -->
+  <div class="jyc-notice">
+    <div class="jyc-wrap">
+      <span class="jyc-notice-tag">官方发布</span>
+      <span class="jyc-notice-text"><strong>「山野一年」年度企划</strong> 第 6 期《霜降后的菜园》已上线，同步开启 2026 冬季创作征集报名。</span>
+      <a class="jyc-notice-link" href="#jyc-log">查看完整更新 →</a>
+    </div>
+  </div>
+
+  <!-- 页头 -->
+  <header class="jyc-header">
+    <div class="jyc-wrap jyc-header-inner">
+      <a class="jyc-brand" href="#jyc-top">
+        <span class="jyc-brand-mark">草</span>
+        <span>
+          <span class="jyc-brand-name">就要草</span>
+          <span class="jyc-brand-sub">ZERO·GREEN</span>
+        </span>
+      </a>
+      <nav class="jyc-nav" id="jycNav">
+        <a href="#jyc-top">首页</a>
+        <a href="#jyc-focus">焦点内容</a>
+        <a href="#jyc-videos">视频流</a>
+        <a href="#jyc-topics">专题企划</a>
+        <a href="#jyc-creators">创作者</a>
+        <a href="#jyc-rank">榜单</a>
+        <a href="#jyc-log">企业动态</a>
+        <a href="#jyc-faq">帮助</a>
+      </nav>
+      <form class="jyc-search" id="jycSearchForm" role="search">
+        <input type="text" id="jycSearchInput" placeholder="搜索自然影像、创作者…" aria-label="站内搜索">
+        <button type="submit">搜索</button>
+      </form>
+      <button class="jyc-burger" id="jycBurger" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="jyc-search-hint" id="jycSearchHint"></div>
+  </header>
+</div>
+
+<main id="jyc-top">
+
+  <!-- 首屏 -->
+  <section class="jyc-hero">
+    <div class="jyc-wrap jyc-hero-grid">
+      <div>
+        <span class="jyc-eyebrow">官方网站 · 自然生活影像社区</span>
+        <h1>就要草</h1>
+        <div class="jyc-hero-tag">把生长的过程，拍成可以反复看的内容</div>
+        <p class="jyc-hero-lead">
+          就要草是一家专注自然生活方式影像的原创视频品牌与企业内容平台。我们相信，真实的生长感比精致的布景更有力量：一株草的返青、一块地的轮作、一位手艺人的日常，都值得被高清记录、被认真剪辑、被长期保存。品牌深耕自然生活与在地文化垂直领域，以创作者社区为核心，持续构建值得信赖的内容生态。
+        </p>
+        <div class="jyc-hero-actions">
+          <a class="jyc-btn jyc-btn--primary" href="#jyc-videos">浏览精品内容</a>
+          <a class="jyc-btn jyc-btn--ghost" href="#jyc-creators">认识创作者</a>
+          <button class="jyc-btn jyc-btn--ghost" id="jycSubmitOpen" type="button">我要投稿</button>
+        </div>
+        <div class="jyc-stats">
+          <div class="jyc-stat">
+            <div class="jyc-stat-num" data-count="1860">1860+</div>
+            <div class="jyc-stat-label">原创视频作品</div>
+          </div>
+          <div class="jyc-stat">
+            <div class="jyc-stat-num" data-count="214">214</div>
+            <div class="jyc-stat-label">持续合作创作者</div>
+          </div>
+          <div class="jyc-stat">
+            <div class="jyc-stat-num" data-count="92">92%</div>
+            <div class="jyc-stat-label">内容完播好评率</div>
+          </div>
+        </div>
+      </div>
+      <div class="jyc-hero-visual">
+        <div class="jyc-hero-cover">
+          <img alt="就要草品牌形象封面：晨光下的草坡与远处菜园，画面中央有摄像机轮廓" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='sky1' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23d9ecd0'/%3E%3Cstop offset='1' stop-color='%23f4f8ec'/%3E%3C/linearGradient%3E%3ClinearGradient id='ground1' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%238fbc6d'/%3E%3Cstop offset='1' stop-color='%232f6b4f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23sky1)'/%3E%3Ccircle cx='640' cy='96' r='52' fill='%23f6e5b8' opacity='.9'/%3E%3Cpath d='M0 268 Q180 214 340 262 T800 244 L800 450 L0 450Z' fill='url(%23ground1)'/%3E%3Cpath d='M0 300 Q200 262 420 300 T800 288 L800 450 L0 450Z' fill='%23265a41' opacity='.55'/%3E%3Cg stroke='%231d4632' stroke-width='4' stroke-linecap='round' fill='none'%3E%3Cpath d='M120 380 q6-46 2-88'/%3E%3Cpath d='M122 330 q-22-14-32-34'/%3E%3Cpath d='M122 316 q24-10 34-30'/%3E%3Cpath d='M300 396 q4-40 0-72'/%3E%3Cpath d='M300 352 q-18-12-26-28'/%3E%3Cpath d='M300 342 q20-8 28-24'/%3E%3C/g%3E%3Cg%3E%3Crect x='470' y='286' width='150' height='92' rx='18' fill='%23223f30' opacity='.85'/%3E%3Ccircle cx='545' cy='332' r='26' fill='%23dfeccd'/%3E%3Ccircle cx='545' cy='332' r='13' fill='%23223f30'/%3E%3Crect x='600' y='312' width='42' height='30' rx='8' fill='%23dfeccd'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.5'%3E%3Ccircle cx='210' cy='120' r='3'/%3E%3Ccircle cx='260' cy='150' r='2'/%3E%3Ccircle cx='330' cy='108' r='2.5'/%3E%3C/g%3E%3C/svg%3E">
+          <span class="jyc-hero-badge">品牌形象片 · 山野一年</span>
+        </div>
+        <div class="jyc-hero-float">4K 高清 <small>原生自然色</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关键词深度解析 -->
+  <section class="jyc-section" id="jyc-about">
+    <div class="jyc-wrap">
+      <span class="jyc-eyebrow">关于就要草</span>
+      <h2 class="jyc-h2">一个把“生长”当作方法论的视频品牌</h2>
+      <p class="jyc-sub">从一株草的观察出发，我们建立了自己的选题标准、拍摄方法与内容节奏。以下内容帮助你更完整地理解就要草官方网站的定位与坚持。</p>
+      <div class="jyc-about-body">
+        <h3>品牌是什么：自然生活的长期记录者</h3>
+        <p>就要草不是一个追逐热点的平台，而是一家把“长期记录”写进企业基因的视频品牌。我们以自然生活、在地文化与手工日常为核心方向，在垂直领域里持续深耕：春天记录播种与返青，夏天记录雨季与萤火，秋天记录收成与储存，冬天记录休耕与修补。一年被切成数十个具体的片段，每个片段都对应一支结构完整、画面高清的原创短片。品牌希望观众打开页面时，看到的不是被滤镜修饰过的田园想象，而是可被验证、可被模仿、可被讨论的真实过程。</p>
+        <p>作为就要草的官方网站，这里承担三重职能：一是精品内容的集中展示，二是创作者社区的日常入口，三是企业与合作伙伴了解品牌故事的窗口。我们不上线来路不明的内容，不做标题式的夸大，每一支视频在发布前都经过选题会、粗剪评审与色彩校正三道流程。内容生态的秩序，比单条内容的热度更重要，这是就要草作为企业最基本的自我要求。</p>
+        <h3>为什么叫“就要草”：一种不着急的倔强</h3>
+        <p>名字来自团队在郊外拍摄时的一句玩笑：地荒着没人管，草却自己长起来了。它不挑土壤，不等许可，也不在意是否被看见。这种“就要”的倔强，后来成了整个品牌的方法论——不追风口，先把一件事做够久；不抢首发，先把画面拍够准；不急着扩张，先把社区里的创作者服务好。我们把这套态度称为“缓慢但确定”，它决定了就要草的内容气质：节奏偏慢、信息密度偏高、镜头语言克制，看完之后能留下一点具体的东西。</p>
+        <p>也正因为如此，就要草的内容生态呈现出明显的多元与包容：有人拍城市阳台的十二盆香草，有人拍海拔两千米的高山牧场，有人拍祖母留下的缝纫机，有人拍一间只在周末营业的旧书店。题材不同，标准一致——真实、清晰、有过程。品牌不定义什么是好的自然生活，只负责把这些不同的答案高清地保存下来。</p>
+        <h3>我们如何做内容：三条不变的标准</h3>
+        <p>第一是真实。我们要求创作者在拍摄前写下“这件事我亲自做过几次”，凡是没做过的，不进入选题池。第二是过程。就要草偏爱有前后对比的影像：从种子到餐桌，从荒地到菜畦，从一块旧木头到一把椅子。过程本身就是叙事结构，观众能从中带走可操作的经验。第三是品质。所有正片统一采用高清规格交付，字幕、配乐、调色由品牌后期团队协同完成，确保每一支作品在视觉与听觉上都达到企业级标准。</p>
+        <p>这三条标准也解释了平台为什么愿意花力气做专题企划。「山野一年」「阳台十二季」「手艺人的工具箱」这些系列，都是按年推进的长线内容，更新节奏稳定，观众可以安心等待。对就要草来说，口碑不是一次爆发带来的，而是十二次准时更新累积起来的信任。用户首选从来不是喊出来的，是一条一条视频攒出来的。</p>
+        <h3>社区里有什么：创作者、观众与合作伙伴</h3>
+        <p>就要草的社区由三类人组成。创作者贡献内容与经验，他们中有职业摄影师，也有下班后剪片的普通上班族；观众贡献反馈与二次传播，评论区里经常出现比正片更具体的补充，比如某地土壤酸碱度、某种香草越冬的具体做法；合作伙伴贡献场景与资源，包括在地农场、手作品牌、环保机构与教育组织。三者互相成就，构成了就要草作为平台的基本盘。</p>
+        <p>为了让社区保持活力，品牌设有月度创作挑战、季度主题征集与年度作品评选。挑战题目通常很具体，例如“记录一次完整的堆肥”“拍下你家附近最早变黄的树”。我们相信具体的题目能激发具体的行动，而具体的行动最终会沉淀为值得信赖的内容资产。这也是就要草持续运营的底层逻辑：用明确的规则，换真实的内容。</p>
+        <h3>未来方向：把影响力用在更长期的地方</h3>
+        <p>接下来一年，就要草会把更多资源投入到两个方向。一是内容的可检索性，让观众能按地域、季节、作物、手艺快速找到需要的影像，让精品内容真正被使用，而不只是被浏览。二是创作者的成长支持，包括拍摄设备共享、后期工作坊与联合出品计划，帮助更多人在不牺牲生活节奏的前提下持续创作。</p>
+        <p>作为一家有社会责任意识的视频企业，我们也会继续推进“影像留档”公益项目，为即将消失的老手艺、老品种、老做法留下高清记录。这些内容不追求即时回报，但它们决定了一个品牌能走多远。就要草愿意做那个慢慢生长、保持真实、持续陪伴的品牌——如果你也认同这种节奏，欢迎在社区里留下你的第一支作品。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点内容 -->
+  <section class="jyc-section jyc-section--tint" id="jyc-focus">
+    <div class="jyc-wrap">
+      <span class="jyc-eyebrow">焦点内容</span>
+      <h2 class="jyc-h2">本周重点推荐：四支值得完整看完的原创影像</h2>
+      <p class="jyc-sub">每期由编辑团队与社区创作者共同提名，侧重过程完整、信息扎实、画面克制的作品，代表就要草当前的品质水位。</p>
+      <div class="jyc-focus-grid">
+        <article class="jyc-focus-card">
+          <div class="jyc-cover">
+            <img alt="焦点内容封面：霜降后菜园里的白菜与霜叶特写" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='f1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23e8f0dd'/%3E%3Cstop offset='1' stop-color='%23c6dbb4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23f1)'/%3E%3Ccircle cx='190' cy='120' r='70' fill='%23f2e9c9' opacity='.7'/%3E%3Cg fill='%232f6b4f'%3E%3Ccircle cx='250' cy='330' r='62'/%3E%3Ccircle cx='380' cy='368' r='54'/%3E%3Ccircle cx='510' cy='322' r='70'/%3E%3Ccircle cx='650' cy='372' r='46'/%3E%3C/g%3E%3Cg fill='%238fbc6d'%3E%3Ccircle cx='226' cy='308' r='30'/%3E%3Ccircle cx='500' cy='296' r='34'/%3E%3Ccircle cx='372' cy='346' r='24'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='3' opacity='.7' fill='none'%3E%3Cpath d='M170 388 q50-16 90 0'/%3E%3Cpath d='M420 400 q50-14 96 0'/%3E%3C/g%3E%3Crect y='380' width='800' height='70' fill='%23b98c5e' opacity='.35'/%3E%3C/svg%3E">
+            <span class="jyc-cover-tag">专题正片</span>
+            <span class="jyc-cover-play"><span></span></span>
+          </div>
+          <div class="jyc-focus-body">
+            <h3>霜降后的菜园：一次完整的越冬准备</h3>
+            <p>从覆草、培土到搭小拱棚，完整记录一块 30 平方米菜地在初霜之后的三天工作。片中有土壤温度实测与失败复盘。</p>
+            <div class="jyc-meta">
+              <span>作者：<b>北坡菜园</b></span><span>时长 18:42</span><span>收藏 <b>2.4k</b></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="jyc-focus-card">
+          <div class="jyc-cover">
+            <img alt="焦点内容封面：手作人工作台上的木勺与刨花" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23f3ead9'/%3E%3Crect x='0' y='250' width='800' height='200' fill='%23c79a68'/%3E%3Crect x='0' y='250' width='800' height='14' fill='%238a5f38' opacity='.5'/%3E%3Cg%3E%3Cellipse cx='330' cy='252' rx='118' ry='16' fill='%23a97b4c' opacity='.5'/%3E%3Cpath d='M250 246 q20-58 96-58 q86 0 104 58 z' fill='%23e6cfa8'/%3E%3Cpath d='M268 214 q34-30 76-30 q44 0 74 30' stroke='%23c9a873' stroke-width='4' fill='none'/%3E%3C/g%3E%3Cg fill='%23d9c19a'%3E%3Cpath d='M470 300 q60-40 120-6 q-52 34-120 6z'/%3E%3Cpath d='M560 344 q50-30 104-4 q-46 30-104 4z'/%3E%3C/g%3E%3Cg stroke='%23223225' stroke-width='6' stroke-linecap='round'%3E%3Cpath d='M600 210 l40 76'/%3E%3Cpath d='M636 196 l30 66'/%3E%3C/g%3E%3Ccircle cx='150' cy='118' r='54' fill='%23ffffff' opacity='.4'/%3E%3C/svg%3E">
+            <span class="jyc-cover-tag">创作者企划</span>
+            <span class="jyc-cover-play"><span></span></span>
+          </div>
+          <div class="jyc-focus-body">
+            <h3>一把木勺的第 11 天：手作节奏的真实样本</h3>
+            <p>不加速、不省略，完整呈现挖勺、打磨、上油的全过程，并回答新手最常问的七个问题，含工具清单与预算建议。</p>
+            <div class="jyc-meta">
+              <span>作者：<b>木下三寸</b></span><span>时长 26:15</span><span>收藏 <b>1.9k</b></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="jyc-focus-card">
+          <div class="jyc-cover">
+            <img alt="焦点内容封面：城市阳台上的十二盆香草与晾晒架" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23e4ecf0'/%3E%3Cg fill='%23c9d6dd'%3E%3Crect x='60' y='40' width='150' height='210' rx='6'/%3E%3Crect x='250' y='20' width='120' height='230' rx='6'/%3E%3Crect x='410' y='46' width='140' height='204' rx='6'/%3E%3Crect x='590' y='26' width='150' height='224' rx='6'/%3E%3C/g%3E%3Cg fill='%23a9c0cb' opacity='.8'%3E%3Crect x='76' y='60' width='118' height='80'/%3E%3Crect x='266' y='42' width='88' height='86'/%3E%3Crect x='426' y='66' width='108' height='74'/%3E%3Crect x='606' y='48' width='118' height='82'/%3E%3C/g%3E%3Crect x='0' y='280' width='800' height='170' fill='%23b9a98c'/%3E%3Cg%3E%3Crect x='90' y='240' width='80' height='52' rx='6' fill='%23b66a4a'/%3E%3Crect x='220' y='250' width='72' height='42' rx='6' fill='%23889c72'/%3E%3Crect x='350' y='236' width='88' height='56' rx='6' fill='%23c98f5a'/%3E%3Crect x='490' y='252' width='70' height='40' rx='6' fill='%237c9a85'/%3E%3Crect x='610' y='242' width='84' height='50' rx='6' fill='%23b66a4a'/%3E%3C/g%3E%3Cg stroke='%232f6b4f' stroke-width='5' stroke-linecap='round' fill='none'%3E%3Cpath d='M130 240 q-10-44 6-72'/%3E%3Cpath d='M136 208 q-20-10-28-28'/%3E%3Cpath d='M394 236 q-6-40 8-64'/%3E%3Cpath d='M402 208 q18-10 24-26'/%3E%3Cpath d='M652 242 q-8-36 6-60'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="jyc-cover-tag">系列更新</span>
+            <span class="jyc-cover-play"><span></span></span>
+          </div>
+          <div class="jyc-focus-body">
+            <h3>阳台十二季 · 第 9 集：朝北窗台能种什么</h3>
+            <p>用一整个生长季的实测数据，回答光照不足时香草与叶菜的选择问题，附每周浇水与补光记录表。</p>
+            <div class="jyc-meta">
+              <span>作者：<b>十三楼南风</b></span><span>时长 14:08</span><span>收藏 <b>3.1k</b></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="jyc-focus-card">
+          <div class="jyc-cover">
+            <img alt="焦点内容封面：山间小溪边的取水与水质检测场景" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23dbe8e2'/%3E%3Cpath d='M0 210 L180 96 L330 210 L470 120 L640 210 L800 140 L800 450 L0 450Z' fill='%237fa08c'/%3E%3Cpath d='M0 262 L200 172 L360 262 L520 190 L700 262 L800 218 L800 450 L0 450Z' fill='%234f7a63'/%3E%3Cpath d='M0 330 q200-46 400-8 q200 38 400-6 L800 450 L0 450Z' fill='%233c6b57'/%3E%3Cpath d='M0 356 q220-34 420 0 q200 34 380-2' stroke='%23cfe6dd' stroke-width='7' fill='none' opacity='.8'/%3E%3Cg fill='%23f0f6ef' opacity='.55'%3E%3Ccircle cx='200' cy='392' r='10'/%3E%3Ccircle cx='420' cy='404' r='7'/%3E%3Ccircle cx='600' cy='388' r='9'/%3E%3C/g%3E%3Cg%3E%3Crect x='96' y='300' width='16' height='70' rx='7' fill='%23d9dee0'/%3E%3Cpath d='M104 366 l-26 16 h52z' fill='%23b7c2c4'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="jyc-cover-tag">实地调查</span>
+            <span class="jyc-cover-play"><span></span></span>
+          </div>
+          <div class="jyc-focus-body">
+            <h3>溪水能不能直接浇菜：一次带仪器的实地测试</h3>
+            <p>取样、测浊度、看上游，全程使用便携检测设备，并邀请农技人员解读结果，给出可执行的处理建议。</p>
+            <div class="jyc-meta">
+              <span>作者：<b>野径记录组</b></span><span>时长 21:33</span><span>收藏 <b>2.7k</b></span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门视频流 -->
+  <section class="jyc-section" id="jyc-videos">
+    <div class="jyc-wrap">
+      <span class="jyc-eyebrow">社区视频流</span>
+      <h2 class="jyc-h2">正在被反复观看的九支作品</h2>
+      <p class="jyc-sub">以下作品来自社区投稿与品牌企划，均经过选题审核与后期规范。你可以按题材筛选，或直接参与讨论。</p>
+      <div class="jyc-filterbar" id="jycFilterBar">
+        <button class="jyc-chip jyc-on" data-filter="all" type="button">全部</button>
+        <button class="jyc-chip" data-filter="garden" type="button">种植记录</button>
+        <button class="jyc-chip" data-filter="craft" type="button">手作日常</button>
+        <button class="jyc-chip" data-filter="city" type="button">城市探索</button>
+        <button class="jyc-chip" data-filter="story" type="button">人物故事</button>
+      </div>
+
+      <div class="jyc-video-grid" id="jycVideoGrid">
+
+        <article class="jyc-video-card" data-cat="garden">
+          <div class="jyc-cover">
+            <img alt="视频封面：雨后堆肥箱打开时的蒸汽与腐殖土" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%233d4b32'/%3E%3Crect x='0' y='250' width='800' height='200' fill='%2358402a'/%3E%3Crect x='110' y='120' width='300' height='190' rx='10' fill='%236b5031'/%3E%3Crect x='128' y='140' width='264' height='150' rx='6' fill='%23412f1d'/%3E%3Cg fill='%23847a4f'%3E%3Ccircle cx='170' cy='190' r='13'/%3E%3Ccircle cx='230' cy='224' r='10'/%3E%3Ccircle cx='300' cy='182' r='15'/%3E%3Ccircle cx='348' cy='238' r='9'/%3E%3C/g%3E%3Cg stroke='%23cfd8bd' stroke-width='5' opacity='.6' fill='none'%3E%3Cpath d='M280 130 q-18-34 10-58'/%3E%3Cpath d='M318 126 q16-30-6-54'/%3E%3C/g%3E%3Cg fill='%238fbc6d'%3E%3Crect x='470' y='250' width='220' height='16' rx='8'/%3E%3Crect x='500' y='286' width='160' height='14' rx='7'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="jyc-cover-tag">种植记录</span>
+          </div>
+          <div class="jyc-video-body">
+            <h3>堆肥第 47 天：翻堆时看到的三件事</h3>
+            <p class="jyc-video-desc">温度、湿度与气味是判断腐熟度的三个直接信号。本期完整记录翻堆过程，并说明失败批次的原因。</p>
+            <div class="jyc-tags"><span class="jyc-tag">堆肥</span><span class="jyc-tag">土壤改良</span></div>
+            <div class="jyc-author"><span class="jyc-avatar" style="background:#2f6b4f">北</span>北坡菜园 · 2026-11-12</div>
+            <div class="jyc-card-foot">
+              <div class="jyc-actions">
+                <button class="jyc-icon-btn jyc-like" type="button" data-likes="386">赞 386</button>
+                <button class="jyc-icon-btn jyc-save" type="button">收藏</button>
+              </div>
+              <button class="jyc-icon-btn jyc-share" type="button" data-title="堆肥第 47 天：翻堆时看到的三件事">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="jyc-video-card" data-cat="craft">
+          <div class="jyc-cover">
+            <img alt="视频封面：染缸中的植物染布料与晾晒的蓝布" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23eef0e6'/%3E%3Ccircle cx='250' cy='210' r='130' fill='%232c3f5e'/%3E%3Ccircle cx='250' cy='210' r='108' fill='%23365479'/%3E%3Ccircle cx='250' cy='210' r='84' fill='%23426a91' opacity='.7'/%3E%3Cpath d='M250 96 q60 44 60 114 q0 70-60 114 q-60-44-60-114 q0-70 60-114z' fill='%23cad8e8' opacity='.35'/%3E%3Cg stroke='%236f7f8c' stroke-width='4' fill='none'%3E%3Cpath d='M470 90 L760 90'/%3E%3Cpath d='M470 120 L760 120'/%3E%3C/g%3E%3Cg fill='%23365479'%3E%3Crect x='500' y='92' width='90' height='116' rx='4'/%3E%3Crect x='612' y='92' width='90' height='116' rx='4' opacity='.8'/%3E%3C/g%3E%3Cg fill='%238d9aa6' opacity='.5'%3E%3Crect x='470' y='300' width='250' height='12' rx='6'/%3E%3Crect x='500' y='330' width='190' height='10' rx='5'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="jyc-cover-tag">手作日常</span>
+          </div>
+          <div class="jyc-video-body">
+            <h3>用一把院子里的叶子，染三块不同的布</h3>
+            <p class="jyc-video-desc">同一批材料，通过媒染剂与浸泡时长的变化得到三种色阶。片尾附完整配比与常见翻车点。</p>
+            <div class="jyc-tags"><span class="jyc-tag">植物染</span><span class="jyc-tag">教程</span></div>
+            <div class="jyc-author"><span class="jyc-avatar" style="background:#6b8e4e">青</span>青苔工坊 · 2026-11-10</div>
+            <div class="jyc-card-foot">
+              <div class="jyc-actions">
+                <button class="jyc-icon-btn jyc-like" type="button" data-likes="512">赞 512</button>
+                <button class="jyc-icon-btn jyc-save" type="button">收藏</button>
+              </div>
+              <button class="jyc-icon-btn jyc-share" type="button" data-title="用一把院子里的叶子，染三块不同的布">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="jyc-video-card" data-cat="city">
+          <div class="jyc-cover">
+            <img alt="视频封面：清晨城市街角的早点摊与行道树" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23f0e9dc'/%3E%3Crect x='0' y='300' width='800' height='150' fill='%23b0a898'/%3E%3Cg fill='%23c4b8a4'%3E%3Crect x='40' y='90' width='170' height='220' rx='4'/%3E%3Crect x='240' y='130' width='120' height='180' rx='4'/%3E%3Crect x='600' y='80' width='160' height='230' rx='4'/%3E%3C/g%3E%3Cg fill='%23a89a83'%3E%3Crect x='60' y='120' width='40' height='44'/%3E%3Crect x='120' y='120' width='40' height='44'/%3E%3Crect x='60' y='190' width='40' height='44'/%3E%3Crect x='620' y='110' width='44' height='48'/%3E%3Crect x='690' y='110' width='44' height='48'/%3E%3C/g%3E%3Crect x='380' y='250' width='190' height='72' rx='8' fill='%23c2603f'/%3E%3Crect x='398' y='228' width='154' height='26' rx='6' fill='%23e8dcc6'/%3E%3Cg stroke='%233f4a34' stroke-width='9' stroke-linecap='round'%3E%3Cpath d='M310 320 L310 180'/%3E%3C/g%3E%3Cg fill='%236f8f57'%3E%3Ccircle cx='310' cy='160' r='46'/%3E%3Ccircle cx='272' cy='190' r='30'/%3E%3Ccircle cx='350' cy='188' r='32'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.5'%3E%3Crect x='440' y='262' width='70' height='8' rx='4'/%3E%3Crect x='440' y='282' width='46' height='8' rx='4'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="jyc-cover-tag">城市探索</span>
+          </div>
+          <div class="jyc-video-body">
+            <h3>六点半的街角：一条街的早饭时间表</h3>
+            <p class="jyc-video-desc">从第一笼包子出锅到最后一杯豆浆，记录七家小店的开门顺序，呈现城市清晨的在地节奏。</p>
+            <div class="jyc-tags"><span class="jyc-tag">在地文化</span><span class="jyc-tag">清晨</span></div>
+            <div class="jyc-author"><span class="jyc-avatar" style="background:#b98c5e">巷</span>巷口观察 · 2026-11-08</div>
+            <div class="jyc-card-foot">
+              <div class="jyc-actions">
+                <button class="jyc-icon-btn jyc-like" type="button" data-likes="764">赞 764</button>
+                <button class="jyc-icon-btn jyc-save" type="button">收藏</button>
+              </div>
+              <button class="jyc-icon-btn jyc-share" type="button" data-title="六点半的街角：一条街的早饭时间表">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="jyc-video-card" data-cat="story">
+          <div class="jyc-cover">
+            <img alt="视频封面：老式缝纫机前的手与线轴特写" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23efe4d4'/%3E%3Crect x='0' y='330' width='800' height='120' fill='%23a9835b'/%3E%3Cg%3E%3Cpath d='M250 330 L250 210 q0-26 34-26 h150 q30 0 30 30 v116' stroke='%233a3a34' stroke-width='12' fill='none'/%3E%3Ccircle cx='300' cy='250' r='34' fill='%23d9d2c4' stroke='%23453f36' stroke-width='8'/%3E%3Cpath d='M430 186 L430 300' stroke='%233a3a34' stroke-width='10'/%3E%3Crect x='380' y='296' width='130' height='24' rx='6' fill='%23b6a48c'/%3E%3C/g%3E%3Cg stroke='%23c2603f' stroke-width='3' fill='none'%3E%3Cpath d='M300 262 q40 46 96 34'/%3E%3C/g%3E%3Cg fill='%23c2603f'%3E%3Ccircle cx='560' cy='250' r='18'/%3E%3Ccircle cx='606' cy='286' r='14'/%3E%3Ccircle cx='522' cy='292' r='11'/%3E%3C/g%3E%3Cg stroke='%23b0a08c' stroke-width='3' fill='none'%3E%3Cpath d='M560 268 L560 330'/%3E%3Cpath d='M606 300 L606 330'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="jyc-cover-tag">人物故事</span>
+          </div>
+          <div class="jyc-video-body">
+            <h3>祖母的缝纫机：一台机器与四十年</h3>
+            <p class="jyc-video-desc">从脚踏板的声音开始，讲述一台缝纫机如何参与三代人的衣物记忆，以及它现在的日常用途。</p>
+            <div class="jyc-tags"><span class="jyc-tag">人物访谈</span><span class="jyc-tag">家庭记忆</span></div>
+            <div class="jyc-author"><span class="jyc-avatar" style="background:#8a6f9e">三</span>三月记录 · 2026-11-06</div>
+            <div class="jyc-card-foot">
+              <div class="jyc-actions">
+                <button class="jyc-icon-btn jyc-like" type="button" data-likes="928">赞 928</button>
+                <button class="jyc-icon-btn jyc-save" type="button">收藏</button>
+              </div>
+              <button class="jyc-icon-btn jyc-share" type="button" data-title="祖母的缝纫机：一台机器与四十年">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="jyc-video-card" data-cat="garden">
+          <div class="jyc-cover">
+            <img alt="视频封面：屋顶菜箱里的番茄藤与竹支架" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23cbdfe8'/%3E%3Crect x='0' y='300' width='800' height='150' fill='%23a8b8c0'/%3E%3Crect x='60' y='250' width='220' height='110' rx='8' fill='%238a6b4a'/%3E%3Crect x='80' y='264' width='180' height='26' rx='4' fill='%23574330'/%3E%3Cg stroke='%23c8b79a' stroke-width='8' stroke-linecap='round'%3E%3Cpath d='M150 262 L150 120'/%3E%3Cpath d='M150 180 L96 150'/%3E%3Cpath d='M150 210 L206 176'/%3E%3C/g%3E%3Cg fill='%23d2453c'%3E%3Ccircle cx='150' cy='150' r='20'/%3E%3Ccircle cx='186' cy='204' r='17'/%3E%3Ccircle cx='112' cy='196' r='15'/%3E%3C/g%3E%3Cg fill='%234b7a4a'%3E%3Cellipse cx='130' cy='176' rx='22' ry='11' transform='rotate(-24 130 176)'/%3E%3Cellipse cx='176' cy='170' rx='20' ry='10' transform='rotate(20 176 170)'/%3E%3C/g%3E%3Cg fill='%23b0c2cc'%3E%3Crect x='380' y='180' width='340' height='16' rx='8'/%3E%3Crect x='380' y='238' width='340' height='16' rx='8'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="jyc-cover-tag">种植记录</span>
+          </div>
+          <div class="jyc-video-body">
+            <h3>屋顶番茄的夏末复盘：哪些做法可以保留</h3>
+            <p class="jyc-video-desc">从整枝、绑蔓到追肥，逐项回看这一季的做法与结果，给出下一季可以直接沿用的清单。</p>
+            <div class="jyc-tags"><span class="jyc-tag">番茄</span><span class="jyc-tag">复盘</span></div>
+            <div class="jyc-author"><span class="jyc-avatar" style="background:#c98f5a">屋</span>屋顶四季 · 2026-11-03</div>
+            <div class="jyc-card-foot">
+              <div class="jyc-actions">
+                <button class="jyc-icon-btn jyc-like" type="button" data-likes="441">赞 441</button>
+                <button class="jyc-icon-btn jyc-save" type="button">收藏</button>
+              </div>
+              <button class="jyc-icon-btn jyc-share" type="button" data-title="屋顶番茄的夏末复盘：哪些做法可以保留">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="jyc-video-card" data-cat="craft">
+          <div class="jyc-cover">
+            <img alt="视频封面：陶轮上正在成形的泥坯与双手" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23e7ded1'/%3E%3Crect x='0' y='330' width='800' height='120' fill='%23b08e6a'/%3E%3Ccircle cx='400' cy='340' r='140' fill='%23cbb49a'/%3E%3Ccircle cx='400' cy='340' r='112' fill='%23b99b7c'/%3E%3Cpath d='M330 340 q0-110 70-110 q70 0 70 110 q0 40-70 40 q-70 0-70-40z' fill='%23d8c3a8'/%3E%3Cpath d='M350 300 q50-26 100 0' stroke='%23a98a6a' stroke-width='5' fill='none'/%3E%3Cg stroke='%23795f45' stroke-width='16' stroke-linecap='round' fill='none'%3E%3Cpath d='M340 214 q-36 6-44 44'/%3E%3Cpath d='M460 214 q36 6 44 44'/%3E%3C/g%3E%3Cg fill='%23b0a595' opacity='.6'%3E%3Ccircle cx='170' cy='130' r='40'/%3E%3Ccircle cx='640' cy='110' r='28'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="jyc-cover-tag">手作日常</span>
+          </div>
+          <div class="jyc-video-body">
+            <h3>第一次拉坯会失败在哪里：五个常见问题</h3>
+            <p class="jyc-video-desc">把镜头放在失败作品上，逐个分析偏心、塌坯、开裂的原因，附练习顺序建议，适合完全新手。</p>
+            <div class="jyc-tags"><span class="jyc-tag">陶艺</span><span class="jyc-tag">新手入门</span></div>
+            <div class="jyc-author"><span class="jyc-avatar" style="background:#a97b4c">泥</span>泥与火 · 2026-10-30</div>
+            <div class="jyc-card-foot">
+              <div class="jyc-actions">
+                <button class="jyc-icon-btn jyc-like" type="button" data-likes="295">赞 295</button>
+                <button class="jyc-icon-btn jyc-save" type="button">收藏</button>
+              </div>
+              <button class="jyc-icon-btn jyc-share" type="button" data-title="第一次拉坯会失败在哪里：五个常见问题">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="jyc-video-card" data-cat="city">
+          <div class="jyc-cover">
+            <img alt="视频封面：旧书店内堆叠的书脊与窗外光线" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23433a30'/%3E%3Crect x='0' y='0' width='800' height='450' fill='%23564a3c'/%3E%3Cg fill='%23a8896a'%3E%3Crect x='70' y='60' width='660' height='16' rx='4'/%3E%3Crect x='70' y='180' width='660' height='16' rx='4'/%3E%3Crect x='70' y='300' width='660' height='16' rx='4'/%3E%3C/g%3E%3Cg%3E%3Crect x='90' y='76' width='24' height='104' fill='%23c2603f'/%3E%3Crect x='122' y='86' width='20' height='94' fill='%238fbc6d'/%3E%3Crect x='150' y='70' width='28' height='110' fill='%23d9b96a'/%3E%3Crect x='186' y='90' width='18' height='90' fill='%236b8e9e'/%3E%3Crect x='212' y='78' width='24' height='102' fill='%23b0a08c'/%3E%3Crect x='90' y='196' width='22' height='104' fill='%238fbc6d'/%3E%3Crect x='120' y='206' width='26' height='94' fill='%23c2603f'/%3E%3C/g%3E%3Crect x='470' y='90' width='240' height='200' fill='%23e6d9bd' opacity='.22'/%3E%3Cpath d='M470 90 h240 v200 h-240z' stroke='%23a8896a' stroke-width='6' fill='none'/%3E%3Cg fill='%23e8dfc8' opacity='.5'%3E%3Crect x='500' y='130' width='80' height='8' rx='4'/%3E%3Crect x='500' y='156' width='140' height='8' rx='4'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="jyc-cover-tag">城市探索</span>
+          </div>
+          <div class="jyc-video-body">
+            <h3>只在周末开门的三平米旧书店</h3>
+            <p class="jyc-video-desc">店主是一位退休教师，店里的书按“读起来舒服”而非分类排列。记录一个下午的来客与对话。</p>
+            <div class="jyc-tags"><span class="jyc-tag">书店</span><span class="jyc-tag">城市角落</span></div>
+            <div class="jyc-author"><span class="jyc-avatar" style="background:#6b8e9e">纸</span>纸页之间 · 2026-10-27</div>
+            <div class="jyc-card-foot">
+              <div class="jyc-actions">
+                <button class="jyc-icon-btn jyc-like" type="button" data-likes="631">赞 631</button>
+                <button class="jyc-icon-btn jyc-save" type="button">收藏</button>
+              </div>
+              <button class="jyc-icon-btn jyc-share" type="button" data-title="只在周末开门的三平米旧书店">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="jyc-video-card" data-cat="story">
+          <div class="jyc-cover">
+            <img alt="视频封面：清晨山路上背着竹篓的采药人背影" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23dfe6d4'/%3E%3Cpath d='M0 250 L180 130 L330 250 L500 150 L680 250 L800 190 L800 450 L0 450Z' fill='%236f8f68'/%3E%3Cpath d='M0 320 q180-50 380-10 q200 40 420-14 L800 450 L0 450Z' fill='%234c6f4d'/%3E%3Cpath d='M340 450 q20-90 60-120' stroke='%23cbbfa8' stroke-width='26' fill='none'/%3E%3Cg%3E%3Ccircle cx='410' cy='296' r='17' fill='%23e2d3bd'/%3E%3Cpath d='M396 316 q14 34 8 62 l22 2 q2-36 12-62z' fill='%23343d2f'/%3E%3Cpath d='M406 262 q34-12 44 10' stroke='%23967a52' stroke-width='9' fill='none'/%3E%3C/g%3E%3Cg fill='%23a68b5f'%3E%3Cpath d='M430 336 q34 8 36 40 q-34-4-36-40z'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.45'%3E%3Cpath d='M120 120 q40-24 80 0 q-40 20-80 0z'/%3E%3Cpath d='M600 100 q44-26 88 0 q-44 22-88 0z'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="jyc-cover-tag">人物故事</span>
+          </div>
+          <div class="jyc-video-body">
+            <h3>跟拍一位采药人的清晨：从四点到九点</h3>
+            <p class="jyc-video-desc">不打扰、不摆拍，只跟随。记录一条常走的山路、几种常见植物的辨识方法，以及他与山的相处方式。</p>
+            <div class="jyc-tags"><span class="jyc-tag">人物访谈</span><span class="jyc-tag">山野</span></div>
+            <div class="jyc-author"><span class="jyc-avatar" style="background:#4c6f4d">野</span>野径记录组 · 2026-10-22</div>
+            <div class="jyc-card-foot">
+              <div class="jyc-actions">
+                <button class="jyc-icon-btn jyc-like" type="button" data-likes="1043">赞 1043</button>
+                <button class="jyc-icon-btn jyc-save" type="button">收藏</button>
+              </div>
+              <button class="jyc-icon-btn jyc-share" type="button" data-title="跟拍一位采药人的清晨：从四点到九点">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="jyc-video-card" data-cat="garden">
+          <div class="jyc-cover">
+            <img alt="视频封面：秋日落叶堆中的土壤剖面与根系" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23e9e0ca'/%3E%3Crect x='0' y='210' width='800' height='240' fill='%23624a33'/%3E%3Crect x='0' y='210' width='800' height='26' fill='%238a6a45'/%3E%3Cg fill='%23a98452' opacity='.8'%3E%3Ccircle cx='120' cy='280' r='7'/%3E%3Ccircle cx='260' cy='330' r='5'/%3E%3Ccircle cx='430' cy='270' r='8'/%3E%3Ccircle cx='600' cy='340' r='6'/%3E%3Ccircle cx='690' cy='290' r='5'/%3E%3C/g%3E%3Cg stroke='%23d9c9a8' stroke-width='4' fill='none'%3E%3Cpath d='M300 210 q-6 46 22 74 q24 24 8 66'/%3E%3Cpath d='M300 214 q26 30 60 34'/%3E%3Cpath d='M322 246 q-30 20-40 54'/%3E%3C/g%3E%3Cg fill='%23c9a86a'%3E%3Cpath d='M520 210 q26-40 64-42 q-12 36-48 52z'/%3E%3Cpath d='M560 210 q40-16 74 6 q-34 22-70 12z'/%3E%3C/g%3E%3Cg fill='%239c8a6a'%3E%3Ccircle cx='700' cy='160' r='18' opacity='.4'/%3E%3Ccircle cx='120' cy='130' r='26' opacity='.3'/%3E%3C/g%3E%3C/svg%3E">
+            <span class="jyc-cover-tag">种植记录</span>
+          </div>
+          <div class="jyc-video-body">
+            <h3>挖开一块土：看见落叶到底变成了什么</h3>
+            <p class="jyc-video-desc">用剖面对比三种不同管理方式下的土壤结构，直观理解覆盖物、蚯蚓与团粒结构之间的关系。</p>
+            <div class="jyc-tags"><span class="jyc-tag">土壤</span><span class="jyc-tag">知识科普</span></div>
+            <div class="jyc-author"><span class="jyc-avatar" style="background:#7a6a45">土</span>土里有话 · 2026-10-18</div>
+            <div class="jyc-card-foot">
+              <div class="jyc-actions">
+                <button class="jyc-icon-btn jyc-like" type="button" data-likes="877">赞 877</button>
+                <button class="jyc-icon-btn jyc-save" type="button">收藏</button>
+              </div>
+              <button class="jyc-icon-btn jyc-share" type="button" data-title="挖开一块土：看见落叶到底变成了什么">分享</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="jyc-section jyc-section--tint" id="jyc-topics">
+    <div class="jyc-wrap">
+      <span class="jyc-eyebrow">专题企划</span>
+      <h2 class="jyc-h2">三条按年推进的长线内容线</h2>
+      <p class="jyc-sub">专题是就要草内容生态的骨架。我们更愿意做少而长的事情，用稳定的更新节奏陪观众过一个完整的周期。</p>
+      <div class="jyc-topic-grid">
+        <article class="jyc-topic-card">
+          <img alt="专题封面：一年四季同一块菜地的四格拼接画面" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23f0f2e6'/%3E%3Cg%3E%3Crect x='30' y='30' width='355' height='185' fill='%23b6d59b'/%3E%3Crect x='415' y='30' width='355' height='185' fill='%238fbc6d'/%3E%3Crect x='30' y='235' width='355' height='185' fill='%23d9b96a'/%3E%3Crect x='415' y='235' width='355' height='185' fill='%23cfe0e8'/%3E%3C/g%3E%3Cg stroke='%232f6b4f' stroke-width='5' stroke-linecap='round' fill='none'%3E%3Cpath d='M120 196 q0-52 24-72'/%3E%3Cpath d='M126 160 q-22-12-30-34'/%3E%3Cpath d='M520 200 q0-64 26-88'/%3E%3Cpath d='M528 154 q26-10 34-32'/%3E%3C/g%3E%3Cg fill='%239c7a4a'%3E%3Crect x='180' y='300' width='70' height='84' rx='6'/%3E%3Crect x='600' y='300' width='70' height='84' rx='6'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.6'%3E%3Ccircle cx='220' cy='120' r='16'/%3E%3Ccircle cx='640' cy='120' r='12'/%3E%3Cpath d='M480 300 q40-20 80 0 q-40 18-80 0z'/%3E%3C/g%3E%3C/svg%3E">
+          <div class="jyc-topic-body">
+            <h3>山野一年 · 第 6 季</h3>
+            <p>同一块地、同一位记录者、连续十二个月的观察。每月一支正片，附当月物候与农事提醒。</p>
+            <span class="jyc-status">更新中 · 已发布 6 期</span>
+          </div>
+        </article>
+        <article class="jyc-topic-card">
+          <img alt="专题封面：城市阳台四季变化的四盆植物拼贴" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23e6ecf0'/%3E%3Crect x='0' y='250' width='800' height='200' fill='%23b8c4c8'/%3E%3Cg%3E%3Cpath d='M120 250 h90 l-16 80 h-58z' fill='%23b66a4a'/%3E%3Cpath d='M300 250 h90 l-16 80 h-58z' fill='%237c9a85'/%3E%3Cpath d='M480 250 h90 l-16 80 h-58z' fill='%23c98f5a'/%3E%3Cpath d='M660 250 h90 l-16 80 h-58z' fill='%23889c72'/%3E%3C/g%3E%3Cg stroke='%232f6b4f' stroke-width='5' stroke-linecap='round' fill='none'%3E%3Cpath d='M165 250 q-6-58 10-88'/%3E%3Cpath d='M345 250 q-8-48 8-76'/%3E%3Cpath d='M525 250 q-4-66 14-96'/%3E%3Cpath d='M705 250 q-8-52 6-80'/%3E%3C/g%3E%3Cg fill='%238fbc6d'%3E%3Ccircle cx='180' cy='168' r='18'/%3E%3Ccircle cx='356' cy='182' r='14'/%3E%3Ccircle cx='540' cy='158' r='20'/%3E%3Ccircle cx='712' cy='176' r='15'/%3E%3C/g%3E%3C/svg%3E">
+          <div class="jyc-topic-body">
+            <h3>阳台十二季</h3>
+            <p>面向城市居住者的种植实验。以真实阳台条件为限制，验证哪些植物、哪些方法真正可行。</p>
+            <span class="jyc-status">更新中 · 已发布 9 期</span>
+          </div>
+        </article>
+        <article class="jyc-topic-card">
+          <img alt="专题封面：手艺人工具箱中的刻刀、凿子与线卷" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23efe3d2'/%3E%3Crect x='0' y='240' width='800' height='210' fill='%23b99c78'/%3E%3Cg fill='%238a6a45'%3E%3Crect x='60' y='150' width='280' height='90' rx='8'/%3E%3Crect x='440' y='150' width='300' height='90' rx='8'/%3E%3C/g%3E%3Cg stroke='%234a3c2c' stroke-width='12' stroke-linecap='round'%3E%3Cpath d='M100 170 L100 300'/%3E%3Cpath d='M150 170 L150 300'/%3E%3Cpath d='M200 170 L200 300'/%3E%3Cpath d='M480 170 L480 300'/%3E%3Cpath d='M540 170 L540 300'/%3E%3C/g%3E%3Cg fill='%23d9c9a8'%3E%3Ccircle cx='100' cy='170' r='14'/%3E%3Ccircle cx='150' cy='170' r='14'/%3E%3Ccircle cx='200' cy='170' r='14'/%3E%3C/g%3E%3Cg fill='%23c2603f'%3E%3Ccircle cx='480' cy='170' r='14'/%3E%3Ccircle cx='540' cy='170' r='14'/%3E%3C/g%3E%3C/svg%3E">
+          <div class="jyc-topic-body">
+            <h3>手艺人的工具箱</h3>
+            <p>每位手作人带一件最常用的工具来到镜头前，讲清它的来历、用法与保养方式，累计 18 位受访者。</p>
+            <span class="jyc-status">更新中 · 已发布 18 期</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者矩阵 -->
+  <section class="jyc-section" id="jyc-creators">
+    <div class="jyc-wrap">
+      <span class="jyc-eyebrow">创作者矩阵</span>
+      <h2 class="jyc-h2">持续输出的六位社区创作者</h2>
+      <p class="jyc-sub">他们来自不同城市、不同职业，但都保持稳定的更新节奏。点击可查看档案，了解他们的选题方法与拍摄习惯。</p>
+      <div class="jyc-creator-grid">
+        <article class="jyc-creator-card">
+          <div class="jyc-creator-av" style="background:linear-gradient(140deg,#2f6b4f,#8fbc6d)">北</div>
+          <h3>北坡菜园</h3>
+          <div class="jyc-creator-field">种植记录 / 土壤管理</div>
+          <p>在城郊租下三分地，用五年时间做同一件事：把菜种好，并且讲清楚怎么种好。</p>
+          <div class="jyc-creator-num"><span><b>126</b>作品</span><span><b>3.8万</b>关注</span></div>
+          <button class="jyc-btn jyc-btn--ghost jyc-creator-btn" type="button" data-name="北坡菜园" data-info="连续更新 5 年 · 擅长土壤改良与越冬管理 · 每周三更新种植记录">查看档案</button>
+        </article>
+        <article class="jyc-creator-card">
+          <div class="jyc-creator-av" style="background:linear-gradient(140deg,#6b8e4e,#c9d9a0)">青</div>
+          <h3>青苔工坊</h3>
+          <div class="jyc-creator-field">植物染 / 天然材料</div>
+          <p>材料来自院子、菜市场与郊野。她的视频经常从“这一把叶子能用吗”开始。</p>
+          <div class="jyc-creator-num"><span><b>89</b>作品</span><span><b>2.6万</b>关注</span></div>
+          <button class="jyc-btn jyc-btn--ghost jyc-creator-btn" type="button" data-name="青苔工坊" data-info="专注天然染色 4 年 · 偏好自然光拍摄 · 作品多次入选品牌专题">查看档案</button>
+        </article>
+        <article class="jyc-creator-card">
+          <div class="jyc-creator-av" style="background:linear-gradient(140deg,#b98c5e,#e0c79c)">巷</div>
+          <h3>巷口观察</h3>
+          <div class="jyc-creator-field">城市探索 / 在地文化</div>
+          <p>用固定机位记录一条街的日常变化，相信重复本身就能长出故事。</p>
+          <div class="jyc-creator-num"><span><b>64</b>作品</span><span><b>1.9万</b>关注</span></div>
+          <button class="jyc-btn jyc-btn--ghost jyc-creator-btn" type="button" data-name="巷口观察" data-info="城市影像记录者 · 擅长长时间蹲点 · 提供拍摄路线攻略">查看档案</button>
+        </article>
+        <article class="jyc-creator-card">
+          <div class="jyc-creator-av" style="background:linear-gradient(140deg,#8a6f9e,#cbb6da)">三</div>
+          <h3>三月记录</h3>
+          <div class="jyc-creator-field">人物访谈 / 家庭记忆</div>
+          <p>不追求戏剧性，只想把普通人的故事讲完整。访谈前会先做三天功课。</p>
+          <div class="jyc-creator-num"><span><b>47</b>作品</span><span><b>2.2万</b>关注</span></div>
+          <button class="jyc-btn jyc-btn--ghost jyc-creator-btn" type="button" data-name="三月记录" data-info="人物访谈创作者 · 擅长长镜头与现场收音 · 乐于分享采访提纲">查看档案</button>
+        </article>
+        <article class="jyc-creator-card">
+          <div class="jyc-creator-av" style="background:linear-gradient(140deg,#4c6f4d,#9cbb8a)">野</div>
+          <h3>野径记录组</h3>
+          <div class="jyc-creator-field">户外活动 / 知识科普</div>
+          <p>三人小队，一人拍、一人记、一人查资料。所有结论都要求能找到出处。</p>
+          <div class="jyc-creator-num"><span><b>58</b>作品</span><span><b>3.1万</b>关注</span></div>
+          <button class="jyc-btn jyc-btn--ghost jyc-creator-btn" type="button" data-name="野径记录组" data-info="户外与自然科普团队 · 装备测评严谨 · 作品附参考资料清单">查看档案</button>
+        </article>
+        <article class="jyc-creator-card">
+          <div class="jyc-creator-av" style="background:linear-gradient(140deg,#c98f5a,#e8c9a0)">屋</div>
+          <h3>屋顶四季</h3>
+          <div class="jyc-creator-field">种植记录 / 空间利用</div>
+          <p>把二十平方米的屋顶做成可复制的小菜园，所有经验都来自亲测。</p>
+          <div class="jyc-creator-num"><span><b>73</b>作品</span><span><b>2.4万</b>关注</span></div>
+          <button class="jyc-btn jyc-btn--ghost jyc-creator-btn" type="button" data-name="屋顶四季" data-info="屋顶种植实践者 · 擅长容器种植 · 定期分享成本清单">查看档案</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 榜单 + 随笔 -->
+  <section class="jyc-section jyc-section--tint" id="jyc-rank">
+    <div class="jyc-wrap">
+      <span class="jyc-eyebrow">社区榜单</span>
+      <h2 class="jyc-h2">本周热度与口碑：来自真实观看的数据</h2>
+      <p class="jyc-sub">榜单按完播率、收藏数与评论质量综合计算，每周一更新。我们更看重“被看完”和“被收藏”，而不是单次点击。</p>
+      <div class="jyc-rank-grid">
+        <div class="jyc-rank-panel">
+          <h3>热度榜 · 本周</h3>
+          <div class="jyc-rank-item"><span class="jyc-rank-no">1</span><span class="jyc-rank-name">跟拍一位采药人的清晨：从四点到九点</span><span class="jyc-rank-val">9.8 万</span></div>
+          <div class="jyc-rank-item"><span class="jyc-rank-no">2</span><span class="jyc-rank-name">挖开一块土：看见落叶到底变成了什么</span><span class="jyc-rank-val">8.6 万</span></div>
+          <div class="jyc-rank-item"><span class="jyc-rank-no">3</span><span class="jyc-rank-name">六点半的街角：一条街的早饭时间表</span><span class="jyc-rank-val">7.9 万</span></div>
+          <div class="jyc-rank-item"><span class="jyc-rank-no">4</span><span class="jyc-rank-name">祖母的缝纫机：一台机器与四十年</span><span class="jyc-rank-val">7.2 万</span></div>
+          <div class="jyc-rank-item"><span class="jyc-rank-no">5</span><span class="jyc-rank-name">用一把院子里的叶子，染三块不同的布</span><span class="jyc-rank-val">6.5 万</span></div>
+        </div>
+        <div class="jyc-rank-panel">
+          <h3>新人榜 · 本月</h3>
+          <div class="jyc-rank-item"><span class="jyc-rank-no">1</span><span class="jyc-rank-name">小满的窗台：第七盆薄荷抢救记录</span><span class="jyc-rank-val">新增 4.7 千</span></div>
+          <div class="jyc-rank-item"><span class="jyc-rank-no">2</span><span class="jyc-rank-name">旧木箱改造：一个下午的收纳实验</span><span class="jyc-rank-val">新增 3.8 千</span></div>
+          <div class="jyc-rank-item"><span class="jyc-rank-no">3</span><span class="jyc-rank-name">第一次做酸菜：从失败到成功</span><span class="jyc-rank-val">新增 3.1 千</span></div>
+          <div class="jyc-rank-item"><span class="jyc-rank-no">4</span><span class="jyc-rank-name">下班后的四十分钟：阳台浇水流程</span><span class="jyc-rank-val">新增 2.6 千</span></div>
+          <div class="jyc-rank-item"><span class="jyc-rank-no">5</span><span class="jyc-rank-name">一只流浪猫如何住进了菜园</span><span class="jyc-rank-val">新增 2.2 千</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 随笔 -->
+  <section class="jyc-section">
+    <div class="jyc-wrap">
+      <span class="jyc-eyebrow">影像随笔</span>
+      <h2 class="jyc-h2">镜头之外，创作者写下的三段短记</h2>
+      <p class="jyc-sub">视频承载过程，文字承载理由。以下随笔由社区创作者授权发布，与对应视频互为补充。</p>
+      <div class="jyc-essay-grid">
+        <article class="jyc-essay">
+          <h3>为什么我愿意拍失败的那一次</h3>
+          <p>第一次堆肥彻底失败，味道和湿度都失控。那条视频的播放量比成功版高很多，评论区讨论了上百条。后来我明白，观众要的不是标准答案，而是一个可以对照自己的过程。</p>
+          <div class="jyc-essay-by">北坡菜园 · 种植记录者</div>
+        </article>
+        <article class="jyc-essay">
+          <h3>把镜头放低一点，草就会变高</h3>
+          <p>拍自然题材最容易被忽略的是角度。蹲下来、贴着地面、让前景的草叶虚化成一层雾，画面立刻有了呼吸感。这些不是技术，是耐心。</p>
+          <div class="jyc-essay-by">野径记录组 · 户外影像</div>
+        </article>
+        <article class="jyc-essay">
+          <h3>一条街值不值得拍一年</h3>
+          <p>有人问我一条普通的街有什么好拍。我说，正因为普通，变化才不容易被看见。等你看完十二个月，会发现早点摊换了招牌，树又高了一截，而你已经认识这条街了。</p>
+          <div class="jyc-essay-by">巷口观察 · 城市探索</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评价 -->
+  <section class="jyc-section jyc-section--deep">
+    <div class="jyc-wrap">
+      <span class="jyc-eyebrow">社区口碑</span>
+      <h2 class="jyc-h2">来自观众与创作者的九条真实反馈</h2>
+      <p class="jyc-sub">这些评价来自评论区、投稿回访与合作伙伴交流，语气与角度各不相同，我们保留了原始表达。</p>
+      <div class="jyc-review-grid">
+        <div class="jyc-review">
+          <div class="jyc-review-head"><span class="jyc-avatar" style="background:#8fbc6d;color:#1d4632">阿</span><div><div class="jyc-review-name">阿棠</div><div class="jyc-review-date">2026-11-15</div></div></div>
+          <p>看完了整个阳台系列，照着做了一个冬天，居然真的活了。最喜欢它不夸大，失败也放出来。</p>
+        </div>
+        <div class="jyc-review">
+          <div class="jyc-review-head"><span class="jyc-avatar" style="background:#c98f5a">老</span><div><div class="jyc-review-name">老周</div><div class="jyc-review-date">2026-11-13</div></div></div>
+          <p>画面干净，字幕舒服，没有乱七八糟的音效。作为企业官网，内容深度超出预期，值得信赖。</p>
+        </div>
+        <div class="jyc-review">
+          <div class="jyc-review-head"><span class="jyc-avatar" style="background:#6b8e9e">小</span><div><div class="jyc-review-name">小满</div><div class="jyc-review-date">2026-11-11</div></div></div>
+          <p>我投稿了第一支视频，编辑给的建议很具体，不是模板回复。这种社区氛围挺难得的。</p>
+        </div>
+        <div class="jyc-review">
+          <div class="jyc-review-head"><span class="jyc-avatar" style="background:#8a6f9e">陆</span><div><div class="jyc-review-name">陆行</div><div class="jyc-review-date">2026-11-09</div></div></div>
+          <p>手艺人系列是我每周固定要看的。十八位受访者里有一半的工具我从没见过，涨见识。</p>
+        </div>
+        <div class="jyc-review">
+          <div class="jyc-review-head"><span class="jyc-avatar" style="background:#b98c5e">庭</span><div><div class="jyc-review-name">庭前树</div><div class="jyc-review-date">2026-11-07</div></div></div>
+          <p>搜索能直接找到“越冬”“堆肥”这些关键词对应的视频，找资料很方便，希望继续完善。</p>
+        </div>
+        <div class="jyc-review">
+          <div class="jyc-review-head"><span class="jyc-avatar" style="background:#2f6b4f">南</span><div><div class="jyc-review-name">南风</div><div class="jyc-review-date">2026-11-05</div></div></div>
+          <p>作为长期观众，最喜欢的是一年系列的稳定感。到日子就知道有新片，这种确定很安心。</p>
+        </div>
+        <div class="jyc-review">
+          <div class="jyc-review-head"><span class="jyc-avatar" style="background:#a97b4c">陶</span><div><div class="jyc-review-name">陶陶</div><div class="jyc-review-date">2026-11-02</div></div></div>
+          <p>拉坯那期帮我少走了很多弯路。作者把失败镜头保留下来，比只讲正确的教程更有用。</p>
+        </div>
+        <div class="jyc-review">
+          <div class="jyc-review-head"><span class="jyc-avatar" style="background:#7c9a85">林</span><div><div class="jyc-review-name">林间</div><div class="jyc-review-date">2026-10-29</div></div></div>
+          <p>和几个农场合作时提到就要草，对方都知道这个品牌。口碑是一点一点做出来的。</p>
+        </div>
+        <div class="jyc-review">
+          <div class="jyc-review-head"><span class="jyc-avatar" style="background:#c2603f">禾</span><div><div class="jyc-review-name">禾下</div><div class="jyc-review-date">2026-10-26</div></div></div>
+          <p>希望多做一些关于种子保存的内容。已有的一定会看完，也愿意参与选题讨论和投票。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 + 合作品牌 -->
+  <section class="jyc-section" id="jyc-log">
+    <div class="jyc-wrap">
+      <span class="jyc-eyebrow">企业动态</span>
+      <h2 class="jyc-h2">品牌公告与内容更新</h2>
+      <p class="jyc-sub">这里记录就要草作为企业的公开信息：新企划上线、社区规则调整、合作与活动进度，均可追溯。</p>
+      <div class="jyc-log-grid">
+        <div class="jyc-log"><span class="jyc-log-date">11-16</span><p>「山野一年」第 6 季第 6 期《霜降后的菜园》正式上线，同步发布本月物候与农事提醒。</p></div>
+        <div class="jyc-log"><span class="jyc-log-date">11-12</span><p>2026 冬季创作征集开启报名，主题为“记录一次完整的准备”，投稿周期至 12 月 20 日。</p></div>
+        <div class="jyc-log"><span class="jyc-log-date">11-06</span><p>创作者后期工作坊第 4 期开放报名，本期聚焦现场收音与自然环境声处理。</p></div>
+        <div class="jyc-log"><span class="jyc-log-date">10-28</span><p>影像留档公益项目完成第二批素材归档，新增 37 项老手艺高清记录。</p></div>
+        <div class="jyc-log"><span class="jyc-log-date">10-20</span><p>搜索与筛选功能优化上线，支持按地域、季节、作物与手艺快速查找精品内容。</p></div>
+        <div class="jyc-log"><span class="jyc-log-date">10-12</span><p>与三家在地农场达成内容合作，后续将联合出品种植记录与产地探访系列。</p></div>
+      </div>
+
+      <h3 style="font-size:19px;color:var(--jyc-green-deep);margin:38px 0 14px;">合作品牌与伙伴</h3>
+      <div class="jyc-partner-grid">
+        <div class="jyc-partner">青禾农场<small>在地种植 · 场地支持</small></div>
+        <div class="jyc-partner">南山陶社<small>手作内容 · 联合出品</small></div>
+        <div class="jyc-partner">纸页文化<small>书店影像 · 内容共建</small></div>
+        <div class="jyc-partner">野径户外<small>装备支持 · 测评协作</small></div>
+        <div class="jyc-partner">拾光教育<small>科普课程 · 版权合作</small></div>
+        <div class="jyc-partner">慢屿文创<small>周边设计 · 品牌联名</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="jyc-section jyc-section--tint" id="jyc-faq">
+    <div class="jyc-wrap">
+      <span class="jyc-eyebrow">帮助中心</span>
+      <h2 class="jyc-h2">常见问题</h2>
+      <p class="jyc-sub">关于内容、投稿、版权与合作的七个高频问题。若仍有疑问，可通过页面底部的联系信息与我们沟通。</p>
+      <div class="jyc-faq">
+        <details><summary>就要草是什么样的平台？</summary><p>就要草是一家专注自然生活方式影像的原创视频品牌与企业内容平台，官方网站集中展示品牌企划、社区作品与创作者信息，内容覆盖种植记录、手作日常、城市探索与人物故事等方向。</p></details>
+        <details><summary>如何向就要草投稿？</summary><p>点击页面上任意“我要投稿”入口，填写作品标题、题材与简介即可提交。编辑部会在五个工作日内回复，通过后进入后期规范流程，并由品牌团队协助完成字幕与调色。</p></details>
+        <details><summary>投稿作品有题材限制吗？</summary><p>内容需与自然生活、在地文化或手工日常相关，强调真实过程与可操作经验。我们鼓励完整记录，包括失败与复盘；纯展示类、无过程信息的作品可能不会被采用。</p></details>
+        <details><summary>作品版权归谁所有？</summary><p>作品版权归创作者所有。就要草在获得授权的前提下进行展示、推荐与联合出品，涉及商业合作时会另签协议，不会擅自处置创作者的素材。</p></details>
+        <details><summary>专题企划的更新频率是怎样的？</summary><p>长线专题按固定节奏推进，例如「山野一年」每月一期，「手艺人的工具箱」每两周一期。更新信息会提前发布在企业动态与社区公告中。</p></details>
+        <details><summary>是否支持转载或二次使用内容？</summary><p>如需转载，请通过联系邮箱提交用途、平台与范围说明。非商业引用必须注明作者与来源；商业用途需单独授权，我们会协助联系创作者。</p></details>
+        <details><summary>品牌是否接受合作与赞助？</summary><p>接受。合作方向包括场地支持、联合出品、测评协作与公益项目共建。我们会优先选择与自然生活理念一致的伙伴，并在内容中明确标注合作关系。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 / 投稿 -->
+  <section class="jyc-section" id="jyc-contact">
+    <div class="jyc-wrap">
+      <div class="jyc-contact-panel">
+        <div>
+          <h2>把你的过程，交给就要草记录</h2>
+          <p>无论你是在阳台种了第一盆香草，还是在小镇守着一间老铺子，只要过程真实、值得被看见，我们都愿意提供拍摄建议、后期支持与展示位置。企业合作、媒体沟通与内容授权同样欢迎来信。</p>
+          <div class="jyc-hero-actions">
+            <button class="jyc-btn jyc-btn--light" id="jycSubmitOpen2" type="button">提交投稿</button>
+            <button class="jyc-btn jyc-btn--light" id="jycCopyMail" type="button">复制联系邮箱</button>
+          </div>
+        </div>
+        <div class="jyc-contact-list">
+          <div><b>投稿邮箱</b><span>create@jiuyaocao.example</span></div>
+          <div><b>合作邮箱</b><span>partner@jiuyaocao.example</span></div>
+          <div><b>媒体沟通</b><span>press@jiuyaocao.example</span></div>
+          <div><b>工作时间</b><span>周一至周五 10:00–18:00</span></div>
+          <div><b>办公地址</b><span>浙江省杭州市西湖区留和路 88 号</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 页脚 -->
+<footer class="jyc-footer">
+  <div class="jyc-wrap">
+    <div class="jyc-footer-grid">
+      <div>
+        <div class="jyc-footer-brand">
+          <span class="jyc-brand-mark">草</span>
+          <strong>就要草</strong>
+        </div>
+        <p class="jyc-footer-desc">就要草官方网站 · 自然生活方式影像品牌与企业内容平台。我们以原创、正版、高清为基本标准，持续运营创作者社区，深耕自然生活垂直领域，致力于成为用户信赖的精品内容来源。</p>
+        <p class="jyc-footer-desc">品牌故事仍在书写，欢迎每一位认真记录生活的人加入内容生态。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#jyc-focus">焦点内容</a></li>
+          <li><a href="#jyc-videos">社区视频流</a></li>
+          <li><a href="#jyc-topics">专题企划</a></li>
+          <li><a href="#jyc-rank">社区榜单</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#jyc-about">品牌解析</a></li>
+          <li><a href="#jyc-creators">创作者矩阵</a></li>
+          <li><a href="#jyc-log">企业动态</a></li>
+          <li><a href="#jyc-faq">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与</h4>
+        <ul>
+          <li><a href="#jyc-contact">投稿与合作</a></li>
+          <li><a href="#jyc-context" id="jycFooterSubmit">我要投稿</a></li>
+          <li><a href="#jyc-faq">常见问题</a></li>
+          <li><a href="#jyc-top">回到首页</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="jyc-footer-bottom">
+      <span>© 2026 就要草（杭州）文化传播有限公司 · 官方网站 · 版权所有</span>
+      <span>浙ICP备2026008866号-1 · 持续运营中 · 官方发布</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="jyc-backtop" id="jycBackTop" aria-label="回到顶部" type="button">↑</button>
+
+<!-- Toast -->
+<div class="jyc-toast" id="jycToast" role="status" aria-live="polite"></div>
+
+<!-- 分享弹窗 -->
+<div class="jyc-modal" id="jycShareModal" role="dialog" aria-modal="true" aria-label="分享">
+  <div class="jyc-modal-box">
+    <button class="jyc-modal-close" type="button" data-close="jycShareModal">×</button>
+    <h3>分享这支作品</h3>
+    <p id="jycShareTitle">选择分享方式，或复制页面链接发送给朋友。</p>
+    <div class="jyc-share-list">
+      <button type="button" data-share="微信">微信</button>
+      <button type="button" data-share="微博">微博</button>
+      <button type="button" data-share="QQ">QQ</button>
+      <button type="button" data-share="复制链接" id="jycCopyLink">复制链接</button>
+    </div>
+  </div>
+</div>
+
+<!-- 作者档案弹窗 -->
+<div class="jyc-modal" id="jycCreatorModal" role="dialog" aria-modal="true" aria-label="创作者档案">
+  <div class="jyc-modal-box">
+    <button class="jyc-modal-close" type="button" data-close="jycCreatorModal">×</button>
+    <h3 id="jycCreatorName">创作者档案</h3>
+    <p id="jycCreatorInfo"></p>
+    <p style="font-size:13px;color:#7c8a80;margin-bottom:0;">档案信息由创作者本人确认，作品数据每周更新。</p>
+  </div>
+</div>
+
+<!-- 投稿弹窗 -->
+<div class="jyc-modal" id="jycSubmitModal" role="dialog" aria-modal="true" aria-label="投稿">
+  <div class="jyc-modal-box">
+    <button class="jyc-modal-close" type="button" data-close="jycSubmitModal">×</button>
+    <h3>向就要草投稿</h3>
+    <p>填写作品基本信息，编辑部将在五个工作日内回复。</p>
+    <input class="jyc-modal-field" id="jycSubmitTitle" type="text" placeholder="作品标题，例如：阳台番茄的第一年" aria-label="作品标题">
+    <input class="jyc-modal-field" id="jycSubmitCat" type="text" placeholder="题材方向，例如：种植记录 / 手作日常" aria-label="题材方向">
+    <textarea class="jyc-modal-field" id="jycSubmitDesc" placeholder="用两三句话说明这支作品记录了怎样的过程" aria-label="作品说明"></textarea>
+    <button class="jyc-btn jyc-btn--primary" id="jycSubmitSend" type="button">提交投稿</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var toastEl = document.getElementById("jycToast");
+  var toastTimer = null;
+  function showToast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add("jyc-on");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove("jyc-on"); }, 2200);
+  }
+
+  /* 移动端导航 */
+  var burger = document.getElementById("jycBurger");
+  var nav = document.getElementById("jycNav");
+  burger.addEventListener("click", function(){
+    var open = nav.classList.toggle("jyc-open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  nav.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){ nav.classList.remove("jyc-open"); burger.setAttribute("aria-expanded","false"); }
+  });
+
+  /* 搜索反馈 */
+  var searchForm = document.getElementById("jycSearchForm");
+  var searchInput = document.getElementById("jycSearchInput");
+  var searchHint = document.getElementById("jycSearchHint");
+  var keywordIndex = ["堆肥","土壤","阳台","香草","植物染","陶艺","旧书店","菜园","手作","访谈","越冬","屋顶"];
+  function doSearch(kw){
+    kw = (kw || "").trim();
+    if(!kw){
+      searchHint.textContent = "输入关键词试试：种植、手作、城市、人物";
+      searchHint.classList.add("jyc-on");
+      return;
+    }
+    var hit = keywordIndex.filter(function(k){ return k.indexOf(kw) > -1 || kw.indexOf(k) > -1; });
+    if(hit.length){
+      searchHint.textContent = "已为你筛选与「" + kw + "」相关的内容：" + hit.join("、") + "（含 " + hit.length + " 个方向）";
+    }else{
+      searchHint.textContent = "暂时没有完全匹配「" + kw + "」的作品，建议尝试：堆肥、阳台、手作、访谈。";
+    }
+    searchHint.classList.add("jyc-on");
+  }
+  searchForm.addEventListener("submit", function(e){ e.preventDefault(); doSearch(searchInput.value); });
+  searchInput.addEventListener("input", function(){
+    if(searchInput.value.trim().length === 0){ searchHint.classList.remove("jyc-on"); }
+  });
+
+  /* 标签筛选 */
+  var filterBar = document.getElementById("jycFilterBar");
+  var cards = Array.prototype.slice.call(document.querySelectorAll("#jycVideoGrid .jyc-video-card"));
+  filterBar.addEventListener("click", function(e){
+    var btn = e.target.closest(".jyc-chip");
+    if(!btn) return;
+    Array.prototype.forEach.call(filterBar.querySelectorAll(".jyc-chip"), function(c){ c.classList.remove("jyc-on"); });
+    btn.classList.add("jyc-on");
+    var f = btn.getAttribute("data-filter");
+    var shown = 0;
+    cards.forEach(function(card){
+      var ok = (f === "all" || card.getAttribute("data-cat") === f);
+      card.style.display = ok ? "" : "none";
+      if(ok) shown++;
+    });
+    showToast("已筛选出 " + shown + " 支作品");
+  });
+
+  /* 点赞 / 收藏 */
+  document.addEventListener("click", function(e){
+    var likeBtn = e.target.closest(".jyc-like");
+    if(likeBtn){
+      var base = parseInt(likeBtn.getAttribute("data-likes"), 10) || 0;
+      var liked = likeBtn.classList.toggle("jyc-liked");
+      likeBtn.textContent = "赞 " + (base + (liked ? 1 : 0));
+      showToast(liked ? "已点赞，感谢你的认可" : "已取消点赞");
+      return;
+    }
+    var saveBtn = e.target.closest(".jyc-save");
+    if(saveBtn){
+      var saved = saveBtn.classList.toggle("jyc-saved");
+      saveBtn.textContent = saved ? "已收藏" : "收藏";
+      showToast(saved ? "已加入你的收藏" : "已取消收藏");
+      return;
+    }
+  });
+
+  /* 分享弹窗 */
+  var shareModal = document.getElementById("jycShareModal");
+  var shareTitle = document.getElementById("jycShareTitle");
+  var currentShareTitle = "就要草 · 自然生活影像";
+  document.addEventListener("click", function(e){
+    var shareBtn = e.target.closest(".jyc-share");
+    if(shareBtn){
+      currentShareTitle = shareBtn.getAttribute("data-title") || currentShareTitle;
+      shareTitle.textContent = "《" + currentShareTitle + "》 · 选择分享方式，或复制页面链接。";
+      shareModal.classList.add("jyc-on");
+    }
+  });
+
+  /* 复制链接 */
+  function copyText(text, okMsg){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ showToast(okMsg); }, function(){ showToast("复制失败，请手动选择文本"); });
+    }else{
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try{ document.execCommand("copy"); showToast(okMsg); }catch(err){ showToast("复制失败，请手动选择文本"); }
+      document.body.removeChild(ta);
+    }
+  }
+  var shareList = document.querySelector(".jyc-share-list");
+  shareList.addEventListener("click", function(e){
+    var btn = e.target.closest("button[data-share]");
+    if(!btn) return;
+    var type = btn.getAttribute("data-share");
+    if(type === "复制链接"){
+      copyText(window.location.href, "页面链接已复制");
+      shareModal.classList.remove("jyc-on");
+      return;
+    }
+    showToast("已生成" + type + "分享内容，请在新窗口完成发送");
+    shareModal.classList.remove("jyc-on");
+  });
+
+  document.getElementById("jycCopyMail").addEventListener("click", function(){
+    copyText("create@jiuyaocao.example", "投稿邮箱已复制：create@jiuyaocao.example");
+  });
+
+  /* 弹窗关闭 */
+  document.addEventListener("click", function(e){
+    var closeBtn = e.target.closest("[data-close]");
+    if(closeBtn){
+      document.getElementById(closeBtn.getAttribute("data-close")).classList.remove("jyc-on");
+      return;
+    }
+    if(e.target.classList && e.target.classList.contains("jyc-modal")){
+      e.target.classList.remove("jyc-on");
+    }
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+      Array.prototype.forEach.call(document.querySelectorAll(".jyc-modal.jyc-on"), function(m){ m.classList.remove("jyc-on"); });
+    }
+  });
+
+  /* 创作者档案 */
+  var creatorModal = document.getElementById("jycCreatorModal");
+  var creatorName = document.getElementById("jycCreatorName");
+  var creatorInfo = document.getElementById("jycCreatorInfo");
+  document.addEventListener("click", function(e){
+    var btn = e.target.closest(".jyc-creator-btn");
+    if(!btn) return;
+    creatorName.textContent = btn.getAttribute("data-name");
+    creatorInfo.textContent = btn.getAttribute("data-info");
+    creatorModal.classList.add("jyc-on");
+  });
+
+  /* 投稿弹窗 */
+  var submitModal = document.getElementById("jycSubmitModal");
+  function openSubmit(){ submitModal.classList.add("jyc-on"); }
+  document.getElementById("jycSubmitOpen").addEventListener("click", openSubmit);
+  document.getElementById("jycSubmitOpen2").addEventListener("click", openSubmit);
+  document.getElementById("jycFooterSubmit").addEventListener("click", function(e){ e.preventDefault(); openSubmit(); });
+  document.getElementById("jycSubmitSend").addEventListener("click", function(){
+    var t = document.getElementById("jycSubmitTitle").value.trim();
+    var c = document.getElementById("jycSubmitCat").value.trim();
+    if(!t){ showToast("请先填写作品标题"); return; }
+    if(!c){ showToast("请填写题材方向"); return; }
+    submitModal.classList.remove("jyc-on");
+    showToast("投稿已提交，编辑部将在五个工作日内回复");
+    document.getElementById("jycSubmitTitle").value = "";
+    document.getElementById("jycSubmitCat").value = "";
+    document.getElementById("jycSubmitDesc").value = "";
+  });
+
+  /* 回到顶部 */
+  var backTop = document.getElementById("jycBackTop");
+  window.addEventListener("scroll", function(){
+    if(window.pageYOffset > 600){ backTop.classList.add("jyc-on"); }
+    else{ backTop.classList.remove("jyc-on"); }
+  }, { passive:true });
+  backTop.addEventListener("click", function(){
+    window.scrollTo({ top:0, behavior:"smooth" });
+  });
+
+  /* 数字滚动 */
+  var counted = false;
+  function runCount(){
+    if(counted) return;
+    var nums = document.querySelectorAll(".jyc-stat-num[data-count]");
+    if(!nums.length) return;
+    var rect = nums[0].getBoundingClientRect();
+    if(rect.top > window.innerHeight) return;
+    counted = true;
+    nums.forEach(function(el){
+      var target = parseInt(el.getAttribute("data-count"), 10);
+      var suffix = el.textContent.replace(/[0-9]/g, "");
+      var start = 0;
+      var step = Math.max(1, Math.round(target / 40));
+      var timer = setInterval(function(){
+        start += step;
+        if(start >= target){
+          start = target;
+          clearInterval(intervalId);
+        }
+        el.textContent = start + suffix;
+      }, 28);
+      var intervalId = timer;
+    });
+  }
+  window.addEventListener("scroll", runCount, { passive:true });
+  runCount();
+})();
+</script>
+</body>
+                                                      </html>
